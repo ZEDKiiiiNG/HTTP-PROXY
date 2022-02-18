@@ -9,7 +9,7 @@
 #include <sstream>
 HTTPMessage::HTTPMessage() {
 }
-HTTPMessage::HTTPMessage(const char * buffer) {
+HTTPMessage::HTTPMessage(const char * buffer, size_t id) : ID(id) {
   //cast char * into stringStream for further parsing
   std::stringstream raw_stream;
   raw_stream << buffer;
