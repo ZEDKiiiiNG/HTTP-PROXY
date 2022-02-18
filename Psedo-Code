@@ -1,0 +1,15 @@
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with C-x C-f and enter text in its buffer.
+
+while(True) {
+socket, ip = acceptConnection()
+if (!fork()) {
+HTTPMessage = recvMessage(clientSock)
+HTTPMessage = processRequest(HTTPMessage)
+serverSock = connectServer()
+sendMessage(HTTPMessage, serverSock)
+recvMessage(HTTPMessage, serverSock)
+HTTPMessage = processResponse(HTTPMessag)
+sendMessage(HTTPMessage, clientSock)
+}
+}
