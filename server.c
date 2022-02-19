@@ -165,7 +165,7 @@ int main() {
         exit(1);
       }
       buf[numbytes] = '\0';
-      //printf("Proxy server: recieved HTTP message:\n%s", buf);
+      printf("Proxy server: recieved HTTP message:\n%s", buf);
       close(fwdSockFd);
       //forward data to client
       len = strlen(buf);
