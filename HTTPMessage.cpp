@@ -32,10 +32,6 @@ struct addrinfo * HTTPMessage::getHost() {
   getaddrinfo(host.first.c_str(), host.second.c_str(), &hints, &hostinfo);
   return hostinfo;
 }
-//test use only
-std::string getId(){
-  return ID;
-}
 std::string HTTPMessage::getStartLine() {
   return start_line;
 }

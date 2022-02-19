@@ -1,7 +1,8 @@
+#ifndef HTTPMESSAGE_HPP
+#define HTTPMESSAGE_HPP
 #include <map>
 #include <string>
 #include <vector>
-#include "common_headers.h"
 #define CRLF "\r\n"
 class HTTPMessage {
  private:
@@ -23,5 +24,5 @@ class HTTPMessage {
   // protected:
   std::pair<std::string, std::string> splitHost(std::string host);
   std::pair<std::string, std::string> splitHeaderLine(std::string headerLine);
-  
 };
+#endif

@@ -1,5 +1,5 @@
 CPPFLAGS=-std=gnu++11 -pedantic -Wall -Werror -ggdb3
-#all: test
+all: HTTPProxy.o HTTPMessage.o ProxyServer.o HTTPRequest.o HTTPResponse.o
 #server: server.o HTTPMessage.o
 #	g++ -o server server.o HTTPMessage.o
 #server.o: server.c
@@ -12,9 +12,9 @@ HTTPProxy.o: HTTPProxy.cpp
 	g++ $(CPPFLAGS) -c HTTPProxy.cpp
 HTTPMessage.o: HTTPMessage.cpp
 	g++ $(CPPFLAGS) -c HTTPMessage.cpp
-proxyServer.o: proxyServer.cpp
-	g++ $(CPPFLAGS) -c proxyServer.cpp
-HTTPRequest.o: HTTPRequest.cpp
-	g++ $(CPPFLAGS) -c HTTPRequest.cpp
-HTTPResponse.o: HTTPResponse.cpp
-	g++ $(CPPFLAGS) -c HTTPResponse.cpp
+ProxyServer.o: ProxyServer.cpp
+	g++ $(CPPFLAGS) -c ProxyServer.cpp
+HTTPRequest.o: HTTPRequest.hpp
+	g++ $(CPPFLAGS) -c HTTPRequest.hpp
+HTTPResponse.o: HTTPResponse.hpp
+	g++ $(CPPFLAGS) -c HTTPResponse.hpp

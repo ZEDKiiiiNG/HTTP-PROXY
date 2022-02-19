@@ -1,12 +1,19 @@
-#include "proxyServer.hpp"
+#include "ProxyServer.hpp"
 
+#include <arpa/inet.h>
+
+#include <cstring>
+#include <string>
+
+#include "HTTPRequest.hpp"
+#include "my_exception.h"
 void * get_in_addr(struct sockaddr * sa) {
   if (sa->sa_family == AF_INET) {
     return &(((struct sockaddr_in *)sa)->sin_addr);
   }
   return &(((struct sockaddr_in6 *)sa)->sin6_addr);
 }
-proxyServer::proxyServer(std::string port_number) : port_number(port_number) {
+ProxyServer::ProxyServer(std::string port_number) : port_number(port_number) {
   int status;
   struct addrinfo hints;
   memset(&hints, 0, sizeof(struct addrinfo));
@@ -41,7 +48,7 @@ proxyServer::proxyServer(std::string port_number) : port_number(port_number) {
     perror("listen failed");
   }
 }
-int proxyServer::acceptConnection(std::string & client_ip) {
+int ProxyServer::acceptConnection(std::string & client_ip) {
   char ip[INET6_ADDRSTRLEN];
   struct sockaddr_storage client_addr;
   socklen_t sin_size = sizeof(client_addr);
@@ -57,25 +64,26 @@ int proxyServer::acceptConnection(std::string & client_ip) {
             sizeof(ip));
   client_ip = std::string(ip);
   return clientfd;
+}
 
-  HTTPMessage* proxyServer::recvMessage(int recvSock, std::string clientIp, size_t requestId){
-    int numbytes;
-    char buf[MAXDATASIZE];
-    if ((numbytes = recv(recvSock, buf, MAXDATASIZE - 1, 0)) == -1) {
-      // perror("recv");
-      throw myException("recv messsage length error!");
-    }
-    buf[numbytes] = '\0';
-    printf("Proxy server: recieved HTTP message:\n%s", buf);
-    // HTTPMessage msg(buf);
-    //get the recv time
-    // 基于当前系统的当前日期/时间
-    time_t now = time(0);
-    // 把 now 转换为 tm 结构
-    tm *gmtm = gmtime(&now);
-    char * dt = asctime(gmtm);
-    string recv_time = string(dt);
-    HTTPRequest* result = new HTTPRequest(buf, requestId, clientIp, recv_time);
-    return result;
+HTTPMessage * ProxyServer::recvMessage(int recvSock,
+                                       std::string clientIp,
+                                       size_t requestId) {
+  int numbytes;
+  char buf[MAXDATASIZE];
+  if ((numbytes = recv(recvSock, buf, MAXDATASIZE - 1, 0)) == -1) {
+    throw myException("recv messsage length error!");
   }
+  buf[numbytes] = '\0';
+  printf("Proxy server: recieved HTTP message:\n%s", buf);
+  // HTTPMessage msg(buf);
+  //get the recv time
+  // 基于当前系统的当前日期/时间
+  time_t now = time(0);
+  // 把 now 转换为 tm 结构
+  tm * gmtm = gmtime(&now);
+  char * dt = asctime(gmtm);
+  std::string recv_time = std::string(dt);
+  HTTPRequest * result = new HTTPRequest(buf, requestId, clientIp, recv_time);
+  return result;
 }
