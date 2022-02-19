@@ -1,6 +1,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include "common_headers.h"
 #define CRLF "\r\n"
 class HTTPMessage {
  private:
@@ -12,6 +13,7 @@ class HTTPMessage {
  public:
   HTTPMessage();
   HTTPMessage(const char * buffer, size_t id);
+  std::string getId();
   std::string getStartLine();
   std::map<std::string, std::string> getHeaders();
   struct addrinfo * getHost();
@@ -21,4 +23,5 @@ class HTTPMessage {
   // protected:
   std::pair<std::string, std::string> splitHost(std::string host);
   std::pair<std::string, std::string> splitHeaderLine(std::string headerLine);
+  
 };
