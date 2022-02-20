@@ -6,6 +6,7 @@
 #include "LogWritter.hpp"
 #include "ProxyServer.hpp"
 #include "my_exception.h"
+#include "common_headers.h"
 class HTTPProxy {
  public:
   //TODO: Log,Cache
@@ -23,5 +24,12 @@ class HTTPProxy {
   void processRequest(HTTPRequest * request);
   //HTTPResponse processResponse(HTTPResponse response);
   void run();
+
+  //3 types:
+  void processConnect(HTTPRequest * request);
+  void processPost(HTTPRequest * request);
+  void processGet(HTTPRequest * request);
+  // connect to server
+  int connectToServer(HTTPRequest * request);
 };
 #endif

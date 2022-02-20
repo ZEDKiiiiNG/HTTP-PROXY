@@ -74,4 +74,21 @@ void HTTPMessage::printMessage() {
   }
   std::cout << std::endl;
   std::cout << "End of the HTTP Message" << std::endl;
+
+  // directly get host name and port
+  // TODO HttpMessage format check !!!!!!!!!!!!!!
+   std::pair<std::string, std::string> getHostnameAndPort(){
+    std::string host = headers["Host"];
+    std::string hostName, hostPort;
+    size_t colonPos = host.find(':');
+    if (colonPos != std::string::npos) {
+      hostName = host.substr(0, host.find(':'));
+      hostPort = host.substr(host.find(':') + 1);
+    }
+    else {
+      hostName = host;
+      hostPort = "80";
+    }
+    return std::pair<std::string, std::string>(hostName, hostPort);
+   }
 }
