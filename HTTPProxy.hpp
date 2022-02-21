@@ -1,12 +1,13 @@
 #ifndef HTTPPROXY_HPP
 #define HTTPPROXY_HPP
 #include <mutex>
+#include <thread>
 
 #include "HTTPRequest.hpp"
 #include "LogWritter.hpp"
 #include "ProxyServer.hpp"
-#include "my_exception.h"
 #include "common_headers.h"
+#include "my_exception.h"
 class HTTPProxy {
  public:
   //TODO: Log,Cache
@@ -29,7 +30,5 @@ class HTTPProxy {
   void processConnect(HTTPRequest * request);
   void processPost(HTTPRequest * request);
   void processGet(HTTPRequest * request);
-  // connect to server
-  int connectToServer(HTTPRequest * request);
 };
 #endif

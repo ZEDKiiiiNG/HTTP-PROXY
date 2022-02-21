@@ -1,5 +1,6 @@
 CPPFLAGS=-std=gnu++11 -pedantic -Wall -Werror -ggdb3
-all: HTTPProxy.o HTTPMessage.o ProxyServer.o HTTPRequest.o HTTPResponse.o
+all: testHTTPMessage testHTTPRequest testHTTPResponse testHTTPProxy
+
 #server: server.o HTTPMessage.o
 #	g++ -o server server.o HTTPMessage.o
 #server.o: server.c
@@ -8,13 +9,16 @@ all: HTTPProxy.o HTTPMessage.o ProxyServer.o HTTPRequest.o HTTPResponse.o
 #	g++ -o test test.o HTTPMessage.o proxyServer.o
 #test.o: test.cpp
 #	g++ $(CPPFLAGS) -c test.cpp
-HTTPProxy.o: HTTPProxy.cpp
-	g++ $(CPPFLAGS) -c HTTPProxy.cpp
-HTTPMessage.o: HTTPMessage.cpp
-	g++ $(CPPFLAGS) -c HTTPMessage.cpp
-ProxyServer.o: ProxyServer.cpp
-	g++ $(CPPFLAGS) -c ProxyServer.cpp
-HTTPRequest.o: HTTPRequest.hpp
-	g++ $(CPPFLAGS) -c HTTPRequest.hpp
-HTTPResponse.o: HTTPResponse.hpp
-	g++ $(CPPFLAGS) -c HTTPResponse.hpp
+testHTTPMessage: testHTTPMessage.cpp HTTPMessage.o
+	g++ -o testHTTPMessage testHTTPMessage.cpp HTTPMessage.o
+testHTTPRequest: testHTTPRequest.cpp HTTPRequest.hpp HTTPMessage.o
+	g++ -o testHTTPRequest testHTTPRequest.cpp HTTPRequest.hpp HTTPMessage.o
+testHTTPResponse: testHTTPResponse.cpp HTTPRequest.hpp HTTPMessage.o
+	g++ -o testHTTPResponse testHTTPResponse.cpp HTTPRequest.hpp HTTPMessage.o
+testHTTPProxy: testHTTPProxy.cpp HTTPProxy.o ProxyServer.o HTTPMessage.o LogWritter.o
+	g++ -o testHTTPProxy testHTTPProxy.cpp HTTPProxy.o ProxyServer.o HTTPMessage.o LogWritter.o -lpthread 
+%.o: %.cpp
+	g++ $(CPPFLAGS) -c $<
+.PHONY: clean
+clean:
+	rm -f *.o *.c~ *.h~ *.cpp~ *.hpp~

@@ -65,10 +65,7 @@ int ProxyServer::acceptConnection(std::string & client_ip) {
   client_ip = std::string(ip);
   return clientfd;
 }
-
-HTTPMessage * ProxyServer::recvMessage(int recvSock,
-                                       std::string clientIp,
-                                       size_t requestId) {
+std::vector<char> ProxyServer::recvMessage(int recvSock) {
   int numbytes;
   char buf[MAXDATASIZE];
   if ((numbytes = recv(recvSock, buf, MAXDATASIZE - 1, 0)) == -1) {
@@ -76,6 +73,14 @@ HTTPMessage * ProxyServer::recvMessage(int recvSock,
   }
   buf[numbytes] = '\0';
   printf("Proxy server: recieved HTTP message:\n%s", buf);
+  std::vector<char> vectorBuf(buf, buf + numbytes);
+  return vectorBuf;
+}
+HTTPRequest * ProxyServer::recvRequest(int recvSock,
+                                       std::string clientIp,
+                                       size_t requestId) {
+  std::vector<char> vectorBuf = recvMessage(recvSock);
+
   // HTTPMessage msg(buf);
   //get the recv time
   // 基于当前系统的当前日期/时间
@@ -84,6 +89,48 @@ HTTPMessage * ProxyServer::recvMessage(int recvSock,
   tm * gmtm = gmtime(&now);
   char * dt = asctime(gmtm);
   std::string recv_time = std::string(dt);
-  HTTPRequest * result = new HTTPRequest(buf, requestId, clientIp, recv_time);
+  HTTPRequest * result = new HTTPRequest(vectorBuf, requestId, clientIp, recv_time);
   return result;
+}
+
+int ProxyServer::connectServer(std::pair<std::string, std::string> host) {
+  int status, serverFd;
+  struct addrinfo hints, *servinfo, *p;
+  memset(&hints, 0, sizeof(hints));
+  hints.ai_family = AF_UNSPEC;
+  hints.ai_socktype = SOCK_STREAM;
+  hints.ai_flags = AI_CANONNAME;  //AI_PASSIVE 被动的，用于bind，通常用于server socket
+
+  if ((status = getaddrinfo(
+           host.first.c_str(), host.second.c_str(), &hints, &servinfo)) != 0) {
+    //TODO: failed to connect to server, send 404 to client
+    throw myException("connectServer: failed to connect");
+    //    const char * s = "404 NOT FOUND";
+    //if (send(request->getClientFd(), s, strlen(s) + 1, 0) == -1) {
+    //throw myException("connectToServer: 404 sending failed");
+  }
+  // connect to server
+  for (p = servinfo; p != NULL; p = p->ai_next) {
+    serverFd = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
+    if (serverFd == -1) {
+      throw myException("connectToServer: get socket failed");
+      continue;
+    }
+    if (connect(serverFd, p->ai_addr, p->ai_addrlen) == -1) {
+      // connect failed
+      throw myException("connectToServer: get connect failed");
+      if (close(serverFd) == -1) {
+        throw myException("connectToServer: close failed");
+      }
+      continue;
+    }
+    break;
+  }
+  freeaddrinfo(servinfo);
+  if (p == NULL) {
+    // cannnot bind successfully
+    fprintf(stderr, "server: failed to bind\n");
+    exit(1);
+  }
+  return serverFd;
 }

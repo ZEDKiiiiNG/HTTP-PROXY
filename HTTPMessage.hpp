@@ -7,7 +7,7 @@
 #define MAXDATASIZE 65535
 
 class HTTPMessage {
- private:
+ protected:
   std::string start_line;
   std::map<std::string, std::string> headers;
   std::vector<char> message_body;
@@ -16,6 +16,7 @@ class HTTPMessage {
  public:
   HTTPMessage();
   HTTPMessage(const char * buffer, size_t id);
+  HTTPMessage(std::vector<char>, size_t id);
   // std::string getId();
   std::string getStartLine();
   std::map<std::string, std::string> getHeaders();
