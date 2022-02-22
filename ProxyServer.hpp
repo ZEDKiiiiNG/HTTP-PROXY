@@ -31,8 +31,10 @@ class ProxyServer {
   // server accepts the client
   int acceptConnection(std::string & client_ip);
   HTTPRequest * recvRequest(int recvSock, std::string clientIp, size_t requestId);
-  HTTPResponse * recvResponse(int recvSock);
+  // pass value
+  HTTPResponse  recvResponse(int recvSock, std::string url, size_t requestId);
   void sendMessage(int sendSock, HTTPMessage msg);
   int connectServer(std::pair<std::string, std::string> host);
+  void sendResponse(int recvSock, HTTPResponse response);
 };
 #endif

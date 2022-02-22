@@ -30,5 +30,6 @@ class HTTPProxy {
   void processConnect(HTTPRequest * request);
   void processPost(HTTPRequest * request);
   void processGet(HTTPRequest * request);
+  
 };
 #endif

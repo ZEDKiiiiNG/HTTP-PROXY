@@ -28,6 +28,8 @@
 
 #include <algorithm>
 
+#include <cstring>
+
 // #include <cstring>
 // #include <netdb.h>
 // #include <sys/socket.h>

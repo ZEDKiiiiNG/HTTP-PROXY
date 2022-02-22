@@ -26,10 +26,12 @@ class HTTPRequest : public HTTPMessage {
   //std::string log(std::ostream output) { output << getID() << ":" << }
   std::string getRecvTime() { return recv_time; }
   std::string getUrl() {
+    std::pair<std::string, std::string> hostpair = getHostnameAndPort();
+    std::string host = hostpair.first + hostpair.second;
     std::string s = start_line;
     size_t r1 = s.find(" ");
     size_t r2 = s.find(" ", s.find(" ") + 1);
-    std::string s1 = s.substr(s.find(" "), r2 - r1);
+    std::string s1 = host+ s.substr(s.find(" "), r2 - r1);
     return s1;
   }
   std::string getMethod() {

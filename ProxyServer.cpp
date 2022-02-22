@@ -66,14 +66,24 @@ int ProxyServer::acceptConnection(std::string & client_ip) {
   return clientfd;
 }
 std::vector<char> ProxyServer::recvMessage(int recvSock) {
-  int numbytes;
   char buf[MAXDATASIZE];
-  if ((numbytes = recv(recvSock, buf, MAXDATASIZE - 1, 0)) == -1) {
-    throw myException("recv messsage length error!");
+  std::string allBuf;
+  while(true){
+    int numbytes = recv(recvSock, buf, MAXDATASIZE - 1, 0);
+    if ( numbytes== -1) {
+      throw myException("recv messsage length error!");
+    }
+    if (numbytes ==0){
+      break;
+    }
+    allBuf.append(buf, numbytes);
   }
-  buf[numbytes] = '\0';
-  printf("Proxy server: recieved HTTP message:\n%s", buf);
-  std::vector<char> vectorBuf(buf, buf + numbytes);
+  // buf[numbytes] = '\0';
+  allBuf.append("\0");
+  std::cout << "Proxy server: recieved HTTP message:"<< allBuf<< std::endl;
+  // TODO: 下下策
+  const char* res = allBuf.c_str();
+  std::vector<char> vectorBuf(res, res + strlen(res));
   return vectorBuf;
 }
 HTTPRequest * ProxyServer::recvRequest(int recvSock,
@@ -94,7 +104,8 @@ HTTPRequest * ProxyServer::recvRequest(int recvSock,
 }
 
 int ProxyServer::connectServer(std::pair<std::string, std::string> host) {
-  int status, serverFd;
+  int status;
+  int serverFd = -1;
   struct addrinfo hints, *servinfo, *p;
   memset(&hints, 0, sizeof(hints));
   hints.ai_family = AF_UNSPEC;
@@ -104,6 +115,7 @@ int ProxyServer::connectServer(std::pair<std::string, std::string> host) {
   if ((status = getaddrinfo(
            host.first.c_str(), host.second.c_str(), &hints, &servinfo)) != 0) {
     //TODO: failed to connect to server, send 404 to client
+    freeaddrinfo(servinfo);
     throw myException("connectServer: failed to connect");
     //    const char * s = "404 NOT FOUND";
     //if (send(request->getClientFd(), s, strlen(s) + 1, 0) == -1) {
@@ -113,14 +125,14 @@ int ProxyServer::connectServer(std::pair<std::string, std::string> host) {
   for (p = servinfo; p != NULL; p = p->ai_next) {
     serverFd = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
     if (serverFd == -1) {
-      throw myException("connectToServer: get socket failed");
+      //throw myException("connectToServer: get socket failed");
       continue;
     }
     if (connect(serverFd, p->ai_addr, p->ai_addrlen) == -1) {
       // connect failed
-      throw myException("connectToServer: get connect failed");
+      //throw myException("connectToServer: get connect failed");
       if (close(serverFd) == -1) {
-        throw myException("connectToServer: close failed");
+        //throw myException("connectToServer: close failed");
       }
       continue;
     }
@@ -128,9 +140,27 @@ int ProxyServer::connectServer(std::pair<std::string, std::string> host) {
   }
   freeaddrinfo(servinfo);
   if (p == NULL) {
-    // cannnot bind successfully
-    fprintf(stderr, "server: failed to bind\n");
-    exit(1);
+    // cannnot connect successfully
+    throw myException("connectServer: failed to connect");
   }
   return serverFd;
+}
+
+HTTPResponse ProxyServer::recvResponse(int recvSock, std::string url, size_t requestId){
+  std::vector<char> vectorBuf = recvMessage(recvSock);
+  
+  HTTPResponse result(vectorBuf, requestId, url);
+  return result;
+}
+void ProxyServer::sendResponse(int recvSock, HTTPResponse response){
+  std::vector<char> vChar= response.to_string();
+     char *buf = new char[vChar.size()+1];
+    //TODO: check method or: char * buf = vChar.empty() ? 0 : & vChar[0];
+	  copy(vChar.begin(),vChar.end(), buf);
+    if(send(recvSock, buf, strlen(buf) + 1, 0) == -1){
+      delete[] buf;
+      close(recvSock);
+      throw myException("send request to server failed");
+    }
+    delete[] buf;
 }
