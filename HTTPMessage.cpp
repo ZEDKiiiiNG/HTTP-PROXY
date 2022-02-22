@@ -11,15 +11,24 @@ HTTPMessage::HTTPMessage() {
 }
 HTTPMessage::HTTPMessage(const char * buffer, size_t id) : ID(id) {
   //cast char * into stringStream for further parsing
+
   std::stringstream raw_stream;
   raw_stream << buffer;
+  //parse start line
   std::getline(raw_stream, start_line);
+  //parse header line
   std::string headerLine;
   std::getline(raw_stream, headerLine);
   while (headerLine != "\r") {
-    headers.insert(splitHeaderLine(headerLine));
+    headers.insert(splitHeaderLine(headerLine.substr(0, headerLine.find("\r"))));
     std::getline(raw_stream, headerLine);
   }
+  //parse payload
+  char c;
+  while (raw_stream.get(c)) {
+    message_body.push_back(c);
+  }
+  message_body.push_back('\0');
 }
 HTTPMessage::HTTPMessage(std::vector<char> vectorBuf, size_t id) : ID(id) {
   char * buffer = new char[vectorBuf.size()];
@@ -29,13 +38,21 @@ HTTPMessage::HTTPMessage(std::vector<char> vectorBuf, size_t id) : ID(id) {
   //TODO: call another constructer
   std::stringstream raw_stream;
   raw_stream << buffer;
+  //parse start line
   std::getline(raw_stream, start_line);
+  //parse header line
   std::string headerLine;
   std::getline(raw_stream, headerLine);
   while (headerLine != "\r") {
-    headers.insert(splitHeaderLine(headerLine));
+    headers.insert(splitHeaderLine(headerLine.substr(0, headerLine.find("\r"))));
     std::getline(raw_stream, headerLine);
   }
+  //parse payload
+  char c;
+  while (raw_stream.get(c)) {
+    message_body.push_back(c);
+  }
+  message_body.push_back('\0');
 }
 struct addrinfo * HTTPMessage::getHost() {
   struct addrinfo hints, *hostinfo;
@@ -53,6 +70,9 @@ std::string HTTPMessage::getStartLine() {
 }
 std::map<std::string, std::string> HTTPMessage::getHeaders() {
   return headers;
+}
+std::vector<char> HTTPMessage::getPayload() {
+  return message_body;
 }
 //this function is used to split host into hostname and hostport
 //E.g. "vcm-23974.vm.duke.edu:8000" ----> ("vcm-23974.vm.duke.edu", "8000")
@@ -73,7 +93,6 @@ std::pair<std::string, std::string> HTTPMessage::splitHost(std::string host) {
 //this function is used to split headerline into header and content
 //E.g. "Host: vcm-23974.vm.duke.edu:8000" ----> ("Host", "vcm-23974.vm.duke.edu:8000")
 std::pair<std::string, std::string> HTTPMessage::splitHeaderLine(std::string headerLine) {
-  headerLine = headerLine.substr(0, headerLine.find('\r'));
   std::string header = headerLine.substr(0, headerLine.find(':'));
   std::string content = headerLine.substr(headerLine.find(':') + 2);
   return std::pair<std::string, std::string>(header, content);
@@ -81,15 +100,37 @@ std::pair<std::string, std::string> HTTPMessage::splitHeaderLine(std::string hea
 //this function is used for test and debug
 //it simply prints the message into std::cout
 void HTTPMessage::printMessage() {
-  std::cout << "Printing HTTP Message..." << std::endl;
-  std::cout << start_line << std::endl;
+  std::vector<char> msg = to_string();
+  for (size_t i = 0; i < msg.size(); i++) {
+    std::cout << msg[i];
+  }
+  std::cout << std::endl;
+}
+void vectorScp(std::vector<char> & target, const std::string & origin) {
+  for (size_t i = 0; i < origin.size(); i++) {
+    target.push_back(origin[i]);
+  }
+}
+void vectorScp(std::vector<char> & target, const std::vector<char> & origin) {
+  for (size_t i = 0; i < origin.size(); i++) {
+    target.push_back(origin[i]);
+  }
+}
+std::vector<char> HTTPMessage::to_string() {
+  std::vector<char> result;
+  vectorScp(result, start_line);
+  result.push_back('\n');
   for (std::map<std::string, std::string>::const_iterator it = headers.begin();
        it != headers.end();
        ++it) {
-    std::cout << it->first << ": " << it->second << std::endl;
+    vectorScp(result, it->first);
+    vectorScp(result, ": ");
+    vectorScp(result, it->second);
+    vectorScp(result, CRLF);
   }
-  std::cout << std::endl;
-  std::cout << "End of the HTTP Message" << std::endl;
+  vectorScp(result, CRLF);
+  vectorScp(result, message_body);
+  return result;
 }
 // directly get host name and port
 // TODO HttpMessage format check !!!!!!!!!!!!!!

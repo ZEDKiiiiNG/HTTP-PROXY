@@ -20,6 +20,7 @@ class HTTPMessage {
   // std::string getId();
   std::string getStartLine();
   std::map<std::string, std::string> getHeaders();
+  std::vector<char> getPayload();
   struct addrinfo * getHost();
   size_t getId() { return ID; }
   std::vector<char> to_string();
@@ -30,4 +31,5 @@ class HTTPMessage {
   // get hostname and port in string:
   std::pair<std::string, std::string> getHostnameAndPort();
 };
+char * vec2array(std::vector<char> vectorBuffer);
 #endif
