@@ -98,7 +98,8 @@ std::vector<char> ProxyServer::recvMessage(int recvSock, bool loop) {
   // std::vector<char> vectorBuf(res, res + strlen(res));
   // return vectorBuf;
   // vector buffer 
-  std::vector<char>  message(MAXDATASIZE);
+  std::vector<char>  message;
+  message.resize(MAXDATASIZE);
   size_t totalSize = 0;
   while(true){
     int numbytes = recv(recvSock, &message.data()[totalSize], MAXDATASIZE - 1, 0);
@@ -116,7 +117,8 @@ std::vector<char> ProxyServer::recvMessage(int recvSock, bool loop) {
       break;
     }
   }
-  message.data()[totalSize] = '\0';
+  // message.data()[totalSize] = '\0';
+  message.resize(totalSize);
   return message;
   
 }
@@ -190,14 +192,14 @@ HTTPResponse ProxyServer::recvResponse(int recvSock, std::string url, size_t req
 }
 void ProxyServer::sendResponse(int recvSock, HTTPResponse response){
   std::vector<char> vChar= response.to_string();
-     char *buf = new char[vChar.size()+1];
+    //  char *buf = new char[vChar.size()+1];
     //TODO: check method or: char * buf = vChar.empty() ? 0 : & vChar[0];
-	  copy(vChar.begin(),vChar.end(), buf);
-    if(send(recvSock, buf, strlen(buf) + 1, 0) == -1){
-      delete[] buf;
+	  // copy(vChar.begin(),vChar.end(), buf);
+    if(send(recvSock, vChar.data(), vChar.size() + 1, 0) == -1){
+      // delete[] buf;
       close(recvSock);
       throw myException("send request to server failed");
     }
-    delete[] buf;
+    // delete[] buf;
     std::cout<<"--------send response complete" << std::endl;
 }

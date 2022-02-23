@@ -73,15 +73,15 @@ void HTTPProxy::processConnect(HTTPRequest * request) {
       int numbytes = recv(clientFd, &message.data()[0], MAXDATASIZE, 0);
       if (numbytes <= 0) {
         if (numbytes < 0) {
-          // throw myException("receive from client failed");
-          break;
+          throw myException("receive from client failed");
+          // break;
         }
         break;
       }
       // send to server
-      if (send(serverFd, message.data(), numbytes, 0) <= 0) {
-        // throw myException("send to server failed");
-        break;
+      if (send(serverFd, message.data(), numbytes, 0) < 0) {
+        throw myException("send to server failed");
+        // break;
       }
     }
     if (FD_ISSET(serverFd, &fds)) {
@@ -91,15 +91,15 @@ void HTTPProxy::processConnect(HTTPRequest * request) {
       int numbytes = recv(serverFd, &message.data()[0], MAXDATASIZE, 0);
       if (numbytes <= 0) {
         if (numbytes < 0) {
-          // throw myException("receive from server failed");
-          break;
+          throw myException("receive from server failed");
+          // break;
         }
         break;
       }
       // send to client
-      if (send(clientFd, message.data(), numbytes, 0) <= 0) {
-        // throw myException("send to server client");
-        break;
+      if (send(clientFd, message.data(), numbytes, 0) < 0) {
+        throw myException("send to server client");
+        // break;
       }
     }
   }
@@ -154,6 +154,7 @@ void HTTPProxy::processPost(HTTPRequest * request) {
     response = pserver.recvResponse(serverFd, request->getUrl(), request->getId());
     std::string recvResponseLog = std::to_string(request->getId()) + ": Received \"" + response.getStartLine() + "\" from " + request->getUrl() + "\n";
     logger.writeLog(recvResponseLog);
+    std::string postStatus = response.getStatus();
     }
     catch(myException &e){
       std::cout<< e.what() << std::endl;

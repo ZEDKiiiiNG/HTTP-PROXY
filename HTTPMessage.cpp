@@ -29,7 +29,7 @@ HTTPMessage::HTTPMessage(const char * buffer, size_t id) : ID(id) {
   while (raw_stream.get(c)) {
     message_body.push_back(c);
   }
-  message_body.push_back('\0');
+  // message_body.push_back('\0');
 }
 HTTPMessage::HTTPMessage(std::vector<char> vectorBuf, size_t id) : ID(id) {
   char * buffer = new char[vectorBuf.size()];
@@ -54,7 +54,7 @@ HTTPMessage::HTTPMessage(std::vector<char> vectorBuf, size_t id) : ID(id) {
   while (raw_stream.get(c)) {
     message_body.push_back(c);
   }
-  message_body.push_back('\0');
+  // message_body.push_back('\0');
 }
 struct addrinfo * HTTPMessage::getHost() {
   struct addrinfo hints, *hostinfo;
