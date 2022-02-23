@@ -18,7 +18,7 @@ class ProxyServer {
   std::string port_number;
 
  protected:
-  std::vector<char> recvMessage(int recvSock);
+  std::vector<char> recvMessage(int recvSock, bool loop);
 
  public:
   ProxyServer(std::string port_number);

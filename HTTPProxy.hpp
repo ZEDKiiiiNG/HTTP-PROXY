@@ -16,15 +16,15 @@ class HTTPProxy {
   size_t requestId;
   logWritter logger;
   std::mutex writeLock;
-  void setUp();
 
   HTTPProxy() : pserver("3490") { requestId = 0; }
+  HTTPProxy(std::string port) : pserver(port) { requestId = 0; }
   ~HTTPProxy() {}
 
   void serveConnection(int clientSock, std::string clientIp);
   void processRequest(HTTPRequest * request);
   //HTTPResponse processResponse(HTTPResponse response);
-  void run();
+  void startRun();
 
   //3 types:
   void processConnect(HTTPRequest * request);

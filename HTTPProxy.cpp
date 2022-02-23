@@ -2,15 +2,19 @@
 
 #include <string>
 
-void HTTPProxy::run() {
+void HTTPProxy::startRun() {
   while (1) {
     int clientSock;
     std::string clientIp;
+    std::cout<< "start service"<<std::endl;
     clientSock = pserver.acceptConnection(clientIp);
     //TODO:Multi-threading
     // serveConnection(clientSock,clientIp);
+    std::cout<< "accept successful"<<std::endl;
     std::thread t(&HTTPProxy::serveConnection, this, clientSock, clientIp);
     t.detach();
+    //single thread:
+    // HTTPProxy::serveConnection(clientSock,clientIp);
   }
 }
 
@@ -18,10 +22,12 @@ void HTTPProxy::processConnect(HTTPRequest * request) {
   int clientFd = request->getClientFd();
   int serverFd = -1;
   // connecting to server
+  std::cout<< "process Connect start" << std::endl;
   try {
     serverFd = pserver.connectServer(request->getHostnameAndPort());
   }
   catch (myException & e) {
+    std::cout<< "process Connect Exception 1" << std::endl;
     if(strcmp(e.what() , "connectServer: failed to connect")){
       const char * s = "404 NOT FOUND";
       if (send(request->getClientFd(), s, strlen(s) + 1, 0) == -1) {
@@ -34,12 +40,15 @@ void HTTPProxy::processConnect(HTTPRequest * request) {
     std::cout << e.what() << std::endl;
     return;
   }
+  std::cout<< "process Connect serverFd"<<  serverFd << std::endl;
   //sending back and log
   std::string Success200("HTTP/1.1 200 OK\r\n\r\n");
   if (send(clientFd, Success200.c_str(), Success200.length(), 0) == -1) {
     close(clientFd);
     throw myException("sending 200 OK failed");
   }
+  std::cout<< "process Connect with serverFd "<<  serverFd << "and clientFd "<<clientFd  << " 200 OK send success"<< std::endl;
+  //sending back and log
   std::string Success200Log = std::to_string(request->getId()) + ": " + Success200;
   logger.writeLog(Success200Log);
   //Tunnel
@@ -48,6 +57,7 @@ void HTTPProxy::processConnect(HTTPRequest * request) {
   waitTime.tv_sec = 1;
   waitTime.tv_usec = 0;
   while (true) {
+    std::vector<char> message(MAXDATASIZE);
     FD_ZERO(&fds);
     FD_SET(clientFd, &fds);
     FD_SET(serverFd, &fds);
@@ -58,9 +68,9 @@ void HTTPProxy::processConnect(HTTPRequest * request) {
     }
     if (FD_ISSET(clientFd, &fds)) {
       // receive from client
-      char buf[MAXDATASIZE];
-      memset(buf, 0, sizeof(buf));
-      int numbytes = recv(clientFd, buf, MAXDATASIZE, 0);
+      // char buf[MAXDATASIZE];
+      // memset(buf, 0, sizeof(buf));
+      int numbytes = recv(clientFd, &message.data()[0], MAXDATASIZE, 0);
       if (numbytes <= 0) {
         if (numbytes < 0) {
           // throw myException("receive from client failed");
@@ -69,16 +79,16 @@ void HTTPProxy::processConnect(HTTPRequest * request) {
         break;
       }
       // send to server
-      if (send(serverFd, buf, numbytes, 0) <= 0) {
+      if (send(serverFd, message.data(), numbytes, 0) <= 0) {
         // throw myException("send to server failed");
         break;
       }
     }
     if (FD_ISSET(serverFd, &fds)) {
       // receive from server
-      char buf[MAXDATASIZE];
-      memset(buf, 0, sizeof(buf));
-      int numbytes = recv(serverFd, buf, MAXDATASIZE, 0);
+      // char buf[MAXDATASIZE];
+      // memset(buf, 0, sizeof(buf));
+      int numbytes = recv(serverFd, &message.data()[0], MAXDATASIZE, 0);
       if (numbytes <= 0) {
         if (numbytes < 0) {
           // throw myException("receive from server failed");
@@ -87,16 +97,18 @@ void HTTPProxy::processConnect(HTTPRequest * request) {
         break;
       }
       // send to client
-      if (send(clientFd, buf, numbytes, 0) <= 0) {
+      if (send(clientFd, message.data(), numbytes, 0) <= 0) {
         // throw myException("send to server client");
         break;
       }
     }
   }
+  std::cout<< "process Connect with serverFd"<<  serverFd << "Tunnel complete"<< std::endl;
   close(serverFd);
   close(clientFd);
   std::string closeTunnelLog = std::to_string(request->getId()) + ": tunnel closed\n";
   logger.writeLog(closeTunnelLog);
+  std::cout<< "process Connect with serverFd"<<  serverFd << "Tunnel closed"<< std::endl;
 }
 
 void HTTPProxy::processPost(HTTPRequest * request) {
@@ -149,11 +161,13 @@ void HTTPProxy::processPost(HTTPRequest * request) {
     
     //then send back specific message according to response 
     std::string postStatus = response.getStatus();
+    std::cout<<"--------get response status "<< postStatus[0]  << std::endl;
       if(postStatus == "200"){
         try{
           std::string sendToClientLog = std::to_string(request->getId()) + ": Responding \"" + response.getStartLine()  + "\"\n";
           logger.writeLog(sendToClientLog);
           pserver.sendResponse(clientFd,response);
+          std::cout<<"--------send response 200" << std::endl;
         }catch(myException &e){
           close(serverFd);
           std::cout<< e.what() << std::endl;
@@ -164,6 +178,7 @@ void HTTPProxy::processPost(HTTPRequest * request) {
           std::string sendToClientLog = std::to_string(request->getId()) + ": Warning " + response.getStartLine()  + "\n";
           logger.writeLog(sendToClientLog);
           pserver.sendResponse(clientFd,response);
+          std::cout<<"--------send response 300" << std::endl;
         }catch(myException &e){
           close(serverFd);
           std::cout<< e.what() << std::endl;
@@ -174,6 +189,7 @@ void HTTPProxy::processPost(HTTPRequest * request) {
           std::string sendToClientLog = std::to_string(request->getId()) + ": Error " + response.getStartLine()  + "\n";
           logger.writeLog(sendToClientLog);
           pserver.sendResponse(clientFd,response);
+          std::cout<<"--------send response 400 or 500"  << std::endl;
         }catch(myException &e){
           close(serverFd);
           std::cout<< e.what() << std::endl;
@@ -236,11 +252,14 @@ void HTTPProxy::processRequest(HTTPRequest * request) {
 }
 void HTTPProxy::serveConnection(int clientSock, std::string clientIp) {
   try {
+    std::cout << "serveConnection start with clientSock "<<clientSock <<" with id"<< requestId << std::endl;
     writeLock.lock();
     size_t thisId = requestId++;
     writeLock.unlock();
+    std::cout << "serveConnection start to get request with id "<<thisId<< std::endl;
     HTTPRequest * request = pserver.recvRequest(clientSock, clientIp, thisId);
     //wrtieLog
+    std::cout << "serveConnection get request with id "<<thisId<< std::endl;
     writeLock.lock();
     std::string recvMessageLog =
         std::to_string(request->getId()) + ": \"" + request->getStartLine() + "\" from " +
@@ -248,7 +267,9 @@ void HTTPProxy::serveConnection(int clientSock, std::string clientIp) {
     logger.writeLog(recvMessageLog);
     writeLock.unlock();
     processRequest(request);
+    std::cout << "serveConnection Complete with Id "<<request->getId()  << std::endl;
     delete request;
+
   }
   catch (myException & e) {
     std::cout << e.what() << std::endl;
