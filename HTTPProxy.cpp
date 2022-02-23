@@ -157,6 +157,19 @@ void HTTPProxy::processPost(HTTPRequest * request) {
     }
     catch(myException &e){
       std::cout<< e.what() << std::endl;
+    }catch (...) {
+      std::cout << "recv response failed" << std::endl;
+      std::string Response500("HTTP/1.1 500 Bad response\r\n\r\n");
+      try{
+        if (send(clientFd, Response500.c_str(), Response500.length(), 0) == -1) {
+          close(clientFd);
+          throw myException("sending 500 response OK failed");
+        }
+        return;
+      }catch (myException & e) {
+      std::cout << e.what() << std::endl;
+      return;
+      }
     }
     
     //then send back specific message according to response  
@@ -274,7 +287,20 @@ void HTTPProxy::serveConnection(int clientSock, std::string clientIp) {
   }
   catch (myException & e) {
     std::cout << e.what() << std::endl;
-  }
+  }catch (...) {
+      std::cout << "recv request failed" << std::endl;
+      std::string Request400("HTTP/1.1 400 Bad Request\r\n\r\n");
+      try{
+        if (send(clientSock, Request400.c_str(), Request400.length(), 0) == -1) {
+          close(clientSock);
+          throw myException("sending 400 request OK failed");
+        }
+      }catch (myException & e) {
+      std::cout << e.what() << std::endl;
+      }
+      close(clientSock);
+    }
+
   
   /*
   struct addrinfo * serverInfo = request.getHost();
@@ -285,6 +311,10 @@ void HTTPProxy::serveConnection(int clientSock, std::string clientIp) {
   response = processResponse(response);
   pServer.sendMessage(clientSock, response);
 server.closeSock()
+  */
+  /*
+  
+    
   */
 }
 

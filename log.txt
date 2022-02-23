@@ -1,90 +1,1796 @@
-0: "POST http://httpbin.org/forms/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:29:59 2022
+0: "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645595998880 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 05:59:58 2022
 
-0: Requesting "POST http://httpbin.org/forms/post HTTP/1.1" from httpbin.org80 http://httpbin.org/forms/post
-0: Received "HTTP/1.1 405 METHOD NOT ALLOWED" from httpbin.org80 http://httpbin.org/forms/post
-0: Error HTTP/1.1 405 METHOD NOT ALLOWED
-0: "POST http://httpbin.org/forms/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:32:57 2022
-
-0: Requesting "POST http://httpbin.org/forms/post HTTP/1.1" from  http://httpbin.org/forms/post
-0: Received "HTTP/1.1 405 METHOD NOT ALLOWED" from  http://httpbin.org/forms/post
-0: Error HTTP/1.1 405 METHOD NOT ALLOWED
-0: "GET http://httpbin.org/forms/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:35:40 2022
-
-0: Requesting "GET http://httpbin.org/forms/post HTTP/1.1" from  http://httpbin.org/forms/post
-0: Received "HTTP/1.1 200 OK" from  http://httpbin.org/forms/post
+0: Requesting "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645595998880 HTTP/1.1" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645595998880
+0: Received "HTTP/1.1 200 OK" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645595998880
 0: Responding "HTTP/1.1 200 OK"
-1: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:35:40 2022
+1: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:02 2022
 
 1: HTTP/1.1 200 OK
 
-2: "GET http://httpbin.org/favicon.ico HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:35:40 2022
+2: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:03 2022
 
-2: Requesting "GET http://httpbin.org/favicon.ico HTTP/1.1" from  http://httpbin.org/favicon.ico
-2: Received "HTTP/1.1 404 NOT FOUND" from  http://httpbin.org/favicon.ico
-2: Error HTTP/1.1 404 NOT FOUND
-1: tunnel closed
-3: "POST http://httpbin.org/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:36:06 2022
-
-3: Requesting "POST http://httpbin.org/post HTTP/1.1" from  http://httpbin.org/post
-3: Received "HTTP/1.1 200 OK" from  http://httpbin.org/post
-3: Responding "HTTP/1.1 200 OK"
-0: "CONNECT tracking.firefox.com.cn:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:42 2022
-
-1: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:42 2022
-
-1: HTTP/1.1 200 OK
-
-2: "CONNECT publish-pic-cpu.baidu.com:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:43 2022
-
-0: HTTP/1.1 200 OK
-
-3: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:43 2022
-
-3: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
-4: "CONNECT newtab.firefoxchina.cn:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:43 2022
-
-1: tunnel closed
-0: tunnel closed
 2: HTTP/1.1 200 OK
 
-2: tunnel closed
-4: HTTP/1.1 200 OK
+3: "CONNECT i.ytimg.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:03 2022
 
-4: tunnel closed
-3: Received "HTTP/1.1 200 OK" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
-3: Responding "HTTP/1.1 200 OK"
-5: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:47 2022
+3: HTTP/1.1 200 OK
+
+1: tunnel closed
+6: "CONNECT googleads.g.doubleclick.net:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:04 2022
+
+6: HTTP/1.1 200 OK
+
+2: tunnel closed
+5: "CONNECT fonts.gstatic.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:04 2022
+
+7: "CONNECT yt3.ggpht.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:04 2022
 
 5: HTTP/1.1 200 OK
 
-6: "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:48 2022
-
-6: Requesting "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from  http://www.httpwatch.com/favicon.ico
-6: Received "HTTP/1.1 200 OK" from  http://www.httpwatch.com/favicon.ico
-6: Responding "HTTP/1.1 200 OK"
 5: tunnel closed
-7: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:59 2022
+3: tunnel closed
+7: HTTP/1.1 200 OK
 
-7: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
-7: Received "HTTP/1.1 200 OK" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
-7: Responding "HTTP/1.1 200 OK"
-8: "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:40:04 2022
+8: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:04 2022
 
-8: Requesting "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from  http://www.httpwatch.com/favicon.ico
-8: Received "HTTP/1.1 206 Partial Content" from  http://www.httpwatch.com/favicon.ico
-8: Error unkown error 
-9: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:40:07 2022
+9: "CONNECT ad.doubleclick.net:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:04 2022
+
+8: HTTP/1.1 200 OK
 
 9: HTTP/1.1 200 OK
 
+11: "CONNECT fonts.gstatic.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:04 2022
+
+11: HTTP/1.1 200 OK
+
+12: "CONNECT i.ytimg.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:04 2022
+
+12: HTTP/1.1 200 OK
+
+10: "CONNECT www.google.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:05 2022
+
+10: HTTP/1.1 200 OK
+
+6: tunnel closed
+13: "CONNECT static.doubleclick.net:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:05 2022
+
+14: "POST http://ocsp.pki.goog/gts1c3 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:05 2022
+
+14: Requesting "POST http://ocsp.pki.goog/gts1c3 HTTP/1.1" from  http://ocsp.pki.goog/gts1c3
+13: HTTP/1.1 200 OK
+
+15: "CONNECT rr2---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:05 2022
+
+15: HTTP/1.1 200 OK
+
+16: "CONNECT rr2---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:05 2022
+
+7: tunnel closed
+16: HTTP/1.1 200 OK
+
+8: tunnel closed
 9: tunnel closed
-10: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:40:43 2022
+11: tunnel closed
+12: tunnel closed
+10: tunnel closed
+17: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:06 2022
 
-10: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
-10: Received "HTTP/1.1 200 OK" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
-10: Responding "HTTP/1.1 200 OK"
-11: "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:40:48 2022
+17: HTTP/1.1 200 OK
 
-11: Requesting "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from  http://www.httpwatch.com/favicon.ico
-11: Received "HTTP/1.1 206 Partial Content" from  http://www.httpwatch.com/favicon.ico
-11: Error unkown error 
+13: tunnel closed
+16: tunnel closed
+18: "CONNECT i.ytimg.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:06 2022
+
+18: HTTP/1.1 200 OK
+
+15: tunnel closed
+17: tunnel closed
+19: "CONNECT www.google.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:07 2022
+
+19: HTTP/1.1 200 OK
+
+18: tunnel closed
+20: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:07 2022
+
+20: HTTP/1.1 200 OK
+
+19: tunnel closed
+20: tunnel closed
+21: "CONNECT tracking.firefox.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:09 2022
+
+22: "CONNECT publish-pic-cpu.baidu.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:09 2022
+
+21: HTTP/1.1 200 OK
+
+22: HTTP/1.1 200 OK
+
+23: "CONNECT newtab.firefoxchina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:09 2022
+
+23: HTTP/1.1 200 OK
+
+21: tunnel closed
+22: tunnel closed
+23: tunnel closed
+24: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:13 2022
+
+24: HTTP/1.1 200 OK
+
+25: "CONNECT www.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:13 2022
+
+25: HTTP/1.1 200 OK
+
+24: tunnel closed
+26: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:14 2022
+
+26: HTTP/1.1 200 OK
+
+27: "CONNECT s1.hdslb.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:14 2022
+
+25: tunnel closed
+27: HTTP/1.1 200 OK
+
+32: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:15 2022
+
+32: HTTP/1.1 200 OK
+
+33: "CONNECT data.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:15 2022
+
+29: "CONNECT i0.hdslb.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:15 2022
+
+30: "CONNECT i1.hdslb.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:15 2022
+
+34: "CONNECT api.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:15 2022
+
+26: tunnel closed
+36: "CONNECT api.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:15 2022
+
+38: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:15 2022
+
+33: HTTP/1.1 200 OK
+
+30: HTTP/1.1 200 OK
+
+29: HTTP/1.1 200 OK
+
+27: tunnel closed
+36: HTTP/1.1 200 OK
+
+38: HTTP/1.1 200 OK
+
+34: HTTP/1.1 200 OK
+
+32: tunnel closed
+37: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:16 2022
+
+37: HTTP/1.1 200 OK
+
+39: "CONNECT s1.hdslb.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:16 2022
+
+39: HTTP/1.1 200 OK
+
+40: "CONNECT api.live.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:16 2022
+
+33: tunnel closed
+40: HTTP/1.1 200 OK
+
+30: tunnel closed
+29: tunnel closed
+34: tunnel closed
+38: tunnel closed
+36: tunnel closed
+35: "CONNECT i0.hdslb.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+41: "CONNECT data.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+35: HTTP/1.1 200 OK
+
+41: HTTP/1.1 200 OK
+
+37: tunnel closed
+31: "CONNECT i2.hdslb.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+42: "CONNECT i0.hdslb.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+43: "CONNECT i1.hdslb.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+39: tunnel closed
+31: HTTP/1.1 200 OK
+
+42: HTTP/1.1 200 OK
+
+43: HTTP/1.1 200 OK
+
+40: tunnel closed
+44: "CONNECT live-trace.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+45: "CONNECT live-trace.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+46: "CONNECT live-trace.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+47: "CONNECT live-trace.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+48: "CONNECT live-trace.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+49: "CONNECT live-trace.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:17 2022
+
+47: HTTP/1.1 200 OK
+
+46: HTTP/1.1 200 OK
+
+48: HTTP/1.1 200 OK
+
+49: HTTP/1.1 200 OK
+
+45: HTTP/1.1 200 OK
+
+44: HTTP/1.1 200 OK
+
+35: tunnel closed
+41: tunnel closed
+49: tunnel closed
+47: tunnel closed
+51: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:18 2022
+
+48: tunnel closed
+51: HTTP/1.1 200 OK
+
+46: tunnel closed
+45: tunnel closed
+31: tunnel closed
+42: tunnel closed
+43: tunnel closed
+44: tunnel closed
+50: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:19 2022
+
+53: "CONNECT newtab.firefoxchina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:19 2022
+
+53: HTTP/1.1 200 OK
+
+50: HTTP/1.1 200 OK
+
+52: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:19 2022
+
+52: HTTP/1.1 200 OK
+
+54: "CONNECT contile.services.mozilla.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:19 2022
+
+54: HTTP/1.1 200 OK
+
+55: "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596019438 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:19 2022
+
+55: Requesting "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596019438 HTTP/1.1" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596019438
+57: "CONNECT data.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:19 2022
+
+56: "CONNECT api2.firefoxchina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:19 2022
+
+57: HTTP/1.1 200 OK
+
+51: tunnel closed
+56: HTTP/1.1 200 OK
+
+55: Received "HTTP/1.1 200 OK" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596019438
+55: Responding "HTTP/1.1 200 OK"
+53: tunnel closed
+50: tunnel closed
+52: tunnel closed
+54: tunnel closed
+57: tunnel closed
+56: tunnel closed
+58: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:21 2022
+
+58: HTTP/1.1 200 OK
+
+59: "CONNECT i.ytimg.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:21 2022
+
+59: HTTP/1.1 200 OK
+
+58: tunnel closed
+59: tunnel closed
+60: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:24 2022
+
+61: "CONNECT data.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:24 2022
+
+61: HTTP/1.1 200 OK
+
+60: HTTP/1.1 200 OK
+
+61: tunnel closed
+60: tunnel closed
+63: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:25 2022
+
+63: HTTP/1.1 200 OK
+
+62: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:26 2022
+
+62: HTTP/1.1 200 OK
+
+63: tunnel closed
+64: "CONNECT data.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:26 2022
+
+64: HTTP/1.1 200 OK
+
+62: tunnel closed
+64: tunnel closed
+65: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:29 2022
+
+65: HTTP/1.1 200 OK
+
+66: "CONNECT data.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:29 2022
+
+66: HTTP/1.1 200 OK
+
+65: tunnel closed
+66: tunnel closed
+67: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:30 2022
+
+68: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:30 2022
+
+68: HTTP/1.1 200 OK
+
+67: HTTP/1.1 200 OK
+
+69: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:31 2022
+
+69: HTTP/1.1 200 OK
+
+68: tunnel closed
+67: tunnel closed
+69: tunnel closed
+71: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:34 2022
+
+72: "CONNECT data.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:34 2022
+
+72: HTTP/1.1 200 OK
+
+71: HTTP/1.1 200 OK
+
+70: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:35 2022
+
+70: HTTP/1.1 200 OK
+
+72: tunnel closed
+71: tunnel closed
+70: tunnel closed
+73: "CONNECT tracking.firefox.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:37 2022
+
+73: HTTP/1.1 200 OK
+
+74: "CONNECT publish-pic-cpu.baidu.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:37 2022
+
+74: HTTP/1.1 200 OK
+
+75: "GET http://httpbin.org/forms/post HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:38 2022
+
+75: Requesting "GET http://httpbin.org/forms/post HTTP/1.1" from  http://httpbin.org/forms/post
+76: "CONNECT newtab.firefoxchina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:38 2022
+
+76: HTTP/1.1 200 OK
+
+75: Received "HTTP/1.1 200 OK" from  http://httpbin.org/forms/post
+75: Responding "HTTP/1.1 200 OK"
+73: tunnel closed
+77: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:38 2022
+
+77: HTTP/1.1 200 OK
+
+74: tunnel closed
+76: tunnel closed
+77: tunnel closed
+78: "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596039995 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:40 2022
+
+78: Requesting "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596039995 HTTP/1.1" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596039995
+80: "CONNECT data.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:40 2022
+
+79: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:40 2022
+
+80: HTTP/1.1 200 OK
+
+79: HTTP/1.1 200 OK
+
+78: Received "HTTP/1.1 200 OK" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596039995
+78: Responding "HTTP/1.1 200 OK"
+81: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:41 2022
+
+80: tunnel closed
+81: HTTP/1.1 200 OK
+
+79: tunnel closed
+82: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:41 2022
+
+82: HTTP/1.1 200 OK
+
+83: "CONNECT cm.bilibili.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:42 2022
+
+83: HTTP/1.1 200 OK
+
+81: tunnel closed
+82: tunnel closed
+83: tunnel closed
+84: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:45 2022
+
+84: HTTP/1.1 200 OK
+
+85: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:45 2022
+
+85: HTTP/1.1 200 OK
+
+86: "CONNECT push.services.mozilla.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:45 2022
+
+86: HTTP/1.1 200 OK
+
+87: "POST http://ocsp.digicert.com/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:46 2022
+
+87: Requesting "POST http://ocsp.digicert.com/ HTTP/1.1" from  http://ocsp.digicert.com/
+84: tunnel closed
+85: tunnel closed
+86: tunnel closed
+88: "POST http://httpbin.org/post HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:00:50 2022
+
+88: Requesting "POST http://httpbin.org/post HTTP/1.1" from  http://httpbin.org/post
+88: Received "HTTP/1.1 200 OK" from  http://httpbin.org/post
+88: Responding "HTTP/1.1 200 OK"
+89: "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596060891 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:00 2022
+
+89: Requesting "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596060891 HTTP/1.1" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596060891
+89: Received "HTTP/1.1 200 OK" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596060891
+89: Responding "HTTP/1.1 200 OK"
+91: "CONNECT publish-pic-cpu.baidu.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:04 2022
+
+90: "CONNECT tracking.firefox.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:04 2022
+
+90: HTTP/1.1 200 OK
+
+91: HTTP/1.1 200 OK
+
+92: "CONNECT newtab.firefoxchina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:05 2022
+
+90: tunnel closed
+93: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:05 2022
+
+93: HTTP/1.1 200 OK
+
+94: "CONNECT www.baidu.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:05 2022
+
+92: HTTP/1.1 200 OK
+
+91: tunnel closed
+93: tunnel closed
+92: tunnel closed
+95: "CONNECT tracking.firefox.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:06 2022
+
+97: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:06 2022
+
+96: "CONNECT www.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:06 2022
+
+97: HTTP/1.1 200 OK
+
+95: HTTP/1.1 200 OK
+
+98: "POST http://ocsp.digicert.com/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:06 2022
+
+98: Requesting "POST http://ocsp.digicert.com/ HTTP/1.1" from  http://ocsp.digicert.com/
+94: HTTP/1.1 200 OK
+
+94: tunnel closed
+96: HTTP/1.1 200 OK
+
+97: tunnel closed
+95: tunnel closed
+99: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:07 2022
+
+99: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+96: tunnel closed
+101: "CONNECT www.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:09 2022
+
+101: HTTP/1.1 200 OK
+
+102: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:09 2022
+
+100: "CONNECT tracking.firefox.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:09 2022
+
+102: HTTP/1.1 200 OK
+
+103: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:10 2022
+
+103: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+100: HTTP/1.1 200 OK
+
+101: tunnel closed
+102: tunnel closed
+100: tunnel closed
+104: "CONNECT www.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+104: HTTP/1.1 200 OK
+
+106: "CONNECT news.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+111: "CONNECT news.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+112: "CONNECT auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+114: "CONNECT news.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+105: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+105: HTTP/1.1 200 OK
+
+107: "CONNECT d3.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+124: "CONNECT i1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+113: "CONNECT i.sso.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+118: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+117: "CONNECT d8.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+118: HTTP/1.1 200 OK
+
+126: "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596081495 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+126: Requesting "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596081495 HTTP/1.1" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596081495
+121: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+125: "CONNECT pluto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+127: "CONNECT safebrowsing.googleapis.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:21 2022
+
+127: HTTP/1.1 200 OK
+
+112: HTTP/1.1 200 OK
+
+127: tunnel closed
+126: Received "HTTP/1.1 200 OK" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596081495
+126: Responding "HTTP/1.1 200 OK"
+121: HTTP/1.1 200 OK
+
+114: HTTP/1.1 200 OK
+
+111: HTTP/1.1 200 OK
+
+106: HTTP/1.1 200 OK
+
+113: HTTP/1.1 200 OK
+
+128: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:22 2022
+
+128: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+125: HTTP/1.1 200 OK
+
+104: tunnel closed
+129: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:22 2022
+
+129: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+132: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:22 2022
+
+132: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+130: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:22 2022
+
+130: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+131: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:22 2022
+
+131: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+105: tunnel closed
+118: tunnel closed
+124: HTTP/1.1 200 OK
+
+117: HTTP/1.1 200 OK
+
+107: HTTP/1.1 200 OK
+
+107: tunnel closed
+112: tunnel closed
+121: tunnel closed
+114: tunnel closed
+106: tunnel closed
+111: tunnel closed
+113: tunnel closed
+125: tunnel closed
+124: tunnel closed
+117: tunnel closed
+133: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+133: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+109: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+120: "CONNECT ess.leju.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+119: "CONNECT ess.leju.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+123: "CONNECT ess.leju.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+110: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+137: "CONNECT auto1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+140: "CONNECT image.sinajs.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+141: "CONNECT www.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+136: "CONNECT www.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+138: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+138: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+139: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+143: "CONNECT i.sso.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+143: HTTP/1.1 200 OK
+
+134: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+134: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+135: "CONNECT www.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+142: "CONNECT interface.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+144: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+146: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+145: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+147: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+151: "CONNECT tech.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+148: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+149: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+152: "CONNECT news.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+150: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+150: HTTP/1.1 200 OK
+
+152: HTTP/1.1 200 OK
+
+154: "CONNECT finance.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+153: "CONNECT finance.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+155: "CONNECT finance.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+151: HTTP/1.1 200 OK
+
+146: HTTP/1.1 200 OK
+
+109: HTTP/1.1 200 OK
+
+145: HTTP/1.1 200 OK
+
+110: HTTP/1.1 200 OK
+
+147: HTTP/1.1 200 OK
+
+144: HTTP/1.1 200 OK
+
+149: HTTP/1.1 200 OK
+
+148: HTTP/1.1 200 OK
+
+139: HTTP/1.1 200 OK
+
+141: HTTP/1.1 200 OK
+
+136: HTTP/1.1 200 OK
+
+135: HTTP/1.1 200 OK
+
+140: HTTP/1.1 200 OK
+
+156: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+156: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+154: HTTP/1.1 200 OK
+
+153: HTTP/1.1 200 OK
+
+155: HTTP/1.1 200 OK
+
+157: "CONNECT www.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+158: "CONNECT auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+157: HTTP/1.1 200 OK
+
+158: HTTP/1.1 200 OK
+
+159: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+159: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+160: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:24 2022
+
+142: HTTP/1.1 200 OK
+
+167: "CONNECT d5.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+143: tunnel closed
+161: "CONNECT hq.sinajs.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+162: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+165: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+168: "CONNECT finance.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+170: "CONNECT interface.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+172: "CONNECT ip.leju.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+168: HTTP/1.1 200 OK
+
+169: "CONNECT interface.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+171: "CONNECT hq.sinajs.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+160: HTTP/1.1 200 OK
+
+167: HTTP/1.1 200 OK
+
+150: tunnel closed
+152: tunnel closed
+173: "CONNECT s.weibo.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+151: tunnel closed
+146: tunnel closed
+110: tunnel closed
+109: tunnel closed
+145: tunnel closed
+147: tunnel closed
+144: tunnel closed
+149: tunnel closed
+148: tunnel closed
+139: tunnel closed
+141: tunnel closed
+136: tunnel closed
+135: tunnel closed
+119: HTTP/1.1 200 OK
+
+165: HTTP/1.1 200 OK
+
+123: HTTP/1.1 200 OK
+
+120: HTTP/1.1 200 OK
+
+140: tunnel closed
+170: HTTP/1.1 200 OK
+
+169: HTTP/1.1 200 OK
+
+155: tunnel closed
+154: tunnel closed
+153: tunnel closed
+174: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:25 2022
+
+157: tunnel closed
+158: tunnel closed
+142: tunnel closed
+172: HTTP/1.1 200 OK
+
+176: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:26 2022
+
+176: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+173: HTTP/1.1 200 OK
+
+174: HTTP/1.1 200 OK
+
+171: HTTP/1.1 200 OK
+
+161: HTTP/1.1 200 OK
+
+175: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:26 2022
+
+137: HTTP/1.1 200 OK
+
+177: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:26 2022
+
+177: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+178: "CONNECT pluto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:26 2022
+
+180: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:26 2022
+
+180: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+179: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:26 2022
+
+179: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+168: tunnel closed
+175: HTTP/1.1 200 OK
+
+160: tunnel closed
+167: tunnel closed
+119: tunnel closed
+165: tunnel closed
+123: tunnel closed
+120: tunnel closed
+162: HTTP/1.1 200 OK
+
+178: HTTP/1.1 200 OK
+
+170: tunnel closed
+169: tunnel closed
+181: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:26 2022
+
+181: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+172: tunnel closed
+173: tunnel closed
+174: tunnel closed
+171: tunnel closed
+161: tunnel closed
+137: tunnel closed
+175: tunnel closed
+162: tunnel closed
+178: tunnel closed
+182: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:27 2022
+
+183: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:28 2022
+
+183: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+184: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:28 2022
+
+184: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+185: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:28 2022
+
+185: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+186: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:28 2022
+
+186: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+182: HTTP/1.1 200 OK
+
+187: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:28 2022
+
+187: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+182: tunnel closed
+188: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+190: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+190: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+189: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+189: HTTP/1.1 200 OK
+
+188: HTTP/1.1 200 OK
+
+191: "CONNECT top.news.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+192: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+192: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+193: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+193: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+194: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+195: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+196: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+197: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+197: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+194: HTTP/1.1 200 OK
+
+196: HTTP/1.1 200 OK
+
+198: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+199: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:30 2022
+
+199: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+191: HTTP/1.1 200 OK
+
+198: HTTP/1.1 200 OK
+
+189: tunnel closed
+188: tunnel closed
+194: tunnel closed
+196: tunnel closed
+195: HTTP/1.1 200 OK
+
+191: tunnel closed
+198: tunnel closed
+200: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:32 2022
+
+200: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+201: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:32 2022
+
+202: "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:32 2022
+
+202: Requesting "POST http://ocsp.dcocsp.cn/ HTTP/1.1" from  http://ocsp.dcocsp.cn/
+203: "CONNECT s.weibo.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:32 2022
+
+201: HTTP/1.1 200 OK
+
+195: tunnel closed
+203: HTTP/1.1 200 OK
+
+204: "CONNECT ess.leju.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:32 2022
+
+204: HTTP/1.1 200 OK
+
+201: tunnel closed
+203: tunnel closed
+205: "CONNECT ess.leju.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+206: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+207: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+204: tunnel closed
+209: "CONNECT pluto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+211: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+208: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+210: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+211: HTTP/1.1 200 OK
+
+212: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+213: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+214: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+215: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+216: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+217: "CONNECT ess.leju.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+206: HTTP/1.1 200 OK
+
+219: "CONNECT hq.sinajs.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+218: "CONNECT ip.leju.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+220: "CONNECT ess.leju.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:34 2022
+
+207: HTTP/1.1 200 OK
+
+210: HTTP/1.1 200 OK
+
+208: HTTP/1.1 200 OK
+
+214: HTTP/1.1 200 OK
+
+213: HTTP/1.1 200 OK
+
+212: HTTP/1.1 200 OK
+
+216: HTTP/1.1 200 OK
+
+215: HTTP/1.1 200 OK
+
+209: HTTP/1.1 200 OK
+
+219: HTTP/1.1 200 OK
+
+218: HTTP/1.1 200 OK
+
+221: "CONNECT hq.sinajs.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:35 2022
+
+221: HTTP/1.1 200 OK
+
+206: tunnel closed
+205: HTTP/1.1 200 OK
+
+217: HTTP/1.1 200 OK
+
+220: HTTP/1.1 200 OK
+
+207: tunnel closed
+210: tunnel closed
+208: tunnel closed
+214: tunnel closed
+212: tunnel closed
+213: tunnel closed
+216: tunnel closed
+215: tunnel closed
+209: tunnel closed
+222: "CONNECT www.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:35 2022
+
+223: "CONNECT interest.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:35 2022
+
+222: HTTP/1.1 200 OK
+
+225: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:35 2022
+
+226: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:35 2022
+
+219: tunnel closed
+224: "CONNECT i.sso.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:35 2022
+
+224: HTTP/1.1 200 OK
+
+227: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:35 2022
+
+228: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:35 2022
+
+229: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:35 2022
+
+211: tunnel closed
+218: tunnel closed
+226: HTTP/1.1 200 OK
+
+228: HTTP/1.1 200 OK
+
+227: HTTP/1.1 200 OK
+
+225: HTTP/1.1 200 OK
+
+221: tunnel closed
+205: tunnel closed
+217: tunnel closed
+220: tunnel closed
+222: tunnel closed
+223: HTTP/1.1 200 OK
+
+224: tunnel closed
+226: tunnel closed
+228: tunnel closed
+227: tunnel closed
+229: HTTP/1.1 200 OK
+
+225: tunnel closed
+230: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:37 2022
+
+230: HTTP/1.1 200 OK
+
+231: "CONNECT auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:37 2022
+
+231: HTTP/1.1 200 OK
+
+223: tunnel closed
+229: tunnel closed
+233: "CONNECT d3.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:38 2022
+
+233: HTTP/1.1 200 OK
+
+232: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:38 2022
+
+234: "CONNECT photo.auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:38 2022
+
+236: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:38 2022
+
+236: HTTP/1.1 200 OK
+
+236: tunnel closed
+252: "CONNECT news.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:38 2022
+
+254: "CONNECT pluto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:38 2022
+
+255: "CONNECT www.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:38 2022
+
+255: HTTP/1.1 200 OK
+
+256: "CONNECT i.sso.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:38 2022
+
+232: HTTP/1.1 200 OK
+
+230: tunnel closed
+252: HTTP/1.1 200 OK
+
+256: HTTP/1.1 200 OK
+
+231: tunnel closed
+257: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:38 2022
+
+254: HTTP/1.1 200 OK
+
+257: HTTP/1.1 200 OK
+
+234: HTTP/1.1 200 OK
+
+233: tunnel closed
+255: tunnel closed
+232: tunnel closed
+252: tunnel closed
+256: tunnel closed
+254: tunnel closed
+250: "CONNECT tva2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+247: "CONNECT auto1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+257: tunnel closed
+247: HTTP/1.1 200 OK
+
+266: "CONNECT auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+251: "CONNECT tvax4.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+266: HTTP/1.1 200 OK
+
+249: "CONNECT tva1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+248: "CONNECT tvax1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+234: tunnel closed
+262: "CONNECT auto2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+259: "CONNECT auto5.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+263: "CONNECT auto2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+258: "CONNECT auto5.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+261: "CONNECT www.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+264: "CONNECT auto2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+260: "CONNECT auto2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:39 2022
+
+261: HTTP/1.1 200 OK
+
+267: "CONNECT d0.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+268: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+245: "CONNECT auto3.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+238: "CONNECT auto.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+239: "CONNECT k.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+242: "CONNECT k.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+241: "CONNECT k.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+246: "CONNECT auto3.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+237: "CONNECT auto.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+240: "CONNECT k.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+259: HTTP/1.1 200 OK
+
+258: HTTP/1.1 200 OK
+
+265: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+269: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+263: HTTP/1.1 200 OK
+
+264: HTTP/1.1 200 OK
+
+260: HTTP/1.1 200 OK
+
+262: HTTP/1.1 200 OK
+
+269: HTTP/1.1 200 OK
+
+268: HTTP/1.1 200 OK
+
+270: "CONNECT auto3.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+246: HTTP/1.1 200 OK
+
+245: HTTP/1.1 200 OK
+
+270: HTTP/1.1 200 OK
+
+267: HTTP/1.1 200 OK
+
+271: "CONNECT auto.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+272: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+238: HTTP/1.1 200 OK
+
+237: HTTP/1.1 200 OK
+
+271: HTTP/1.1 200 OK
+
+244: "CONNECT k.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+273: "CONNECT db.auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+274: "CONNECT dbs.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+275: "CONNECT auto.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+243: "CONNECT k.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+276: "CONNECT db.auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+275: HTTP/1.1 200 OK
+
+284: "CONNECT db.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+281: "CONNECT usedcar.auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+279: "CONNECT price.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+277: "CONNECT a.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+278: "CONNECT interface.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+280: "CONNECT a.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+282: "CONNECT auto.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+282: HTTP/1.1 200 OK
+
+265: HTTP/1.1 200 OK
+
+283: "CONNECT auto.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+283: HTTP/1.1 200 OK
+
+272: HTTP/1.1 200 OK
+
+278: HTTP/1.1 200 OK
+
+251: HTTP/1.1 200 OK
+
+248: HTTP/1.1 200 OK
+
+241: HTTP/1.1 200 OK
+
+240: HTTP/1.1 200 OK
+
+239: HTTP/1.1 200 OK
+
+243: HTTP/1.1 200 OK
+
+244: HTTP/1.1 200 OK
+
+242: HTTP/1.1 200 OK
+
+249: HTTP/1.1 200 OK
+
+285: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+284: HTTP/1.1 200 OK
+
+286: "CONNECT i1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:40 2022
+
+286: HTTP/1.1 200 OK
+
+274: HTTP/1.1 200 OK
+
+247: tunnel closed
+281: HTTP/1.1 200 OK
+
+266: tunnel closed
+285: HTTP/1.1 200 OK
+
+277: HTTP/1.1 200 OK
+
+280: HTTP/1.1 200 OK
+
+273: HTTP/1.1 200 OK
+
+276: HTTP/1.1 200 OK
+
+261: tunnel closed
+259: tunnel closed
+258: tunnel closed
+288: "CONNECT i.sso.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+263: tunnel closed
+264: tunnel closed
+260: tunnel closed
+262: tunnel closed
+288: HTTP/1.1 200 OK
+
+269: tunnel closed
+268: tunnel closed
+246: tunnel closed
+245: tunnel closed
+270: tunnel closed
+267: tunnel closed
+238: tunnel closed
+237: tunnel closed
+271: tunnel closed
+250: HTTP/1.1 200 OK
+
+275: tunnel closed
+282: tunnel closed
+289: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+289: HTTP/1.1 200 OK
+
+287: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+265: tunnel closed
+283: tunnel closed
+290: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+272: tunnel closed
+278: tunnel closed
+251: tunnel closed
+248: tunnel closed
+241: tunnel closed
+240: tunnel closed
+243: tunnel closed
+239: tunnel closed
+244: tunnel closed
+242: tunnel closed
+291: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+249: tunnel closed
+287: HTTP/1.1 200 OK
+
+292: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+290: HTTP/1.1 200 OK
+
+293: "CONNECT safebrowsing.googleapis.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+294: "CONNECT safebrowsing.googleapis.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+293: HTTP/1.1 200 OK
+
+294: HTTP/1.1 200 OK
+
+284: tunnel closed
+274: tunnel closed
+286: tunnel closed
+295: "CONNECT d00.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+296: "CONNECT d00.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:41 2022
+
+281: tunnel closed
+279: HTTP/1.1 200 OK
+
+291: HTTP/1.1 200 OK
+
+285: tunnel closed
+293: tunnel closed
+294: tunnel closed
+277: tunnel closed
+280: tunnel closed
+273: tunnel closed
+276: tunnel closed
+292: HTTP/1.1 200 OK
+
+297: "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596102056 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:42 2022
+
+297: Requesting "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596102056 HTTP/1.1" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596102056
+288: tunnel closed
+250: tunnel closed
+289: tunnel closed
+296: HTTP/1.1 200 OK
+
+295: HTTP/1.1 200 OK
+
+287: tunnel closed
+297: Received "HTTP/1.1 200 OK" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596102056
+297: Responding "HTTP/1.1 200 OK"
+290: tunnel closed
+279: tunnel closed
+291: tunnel closed
+298: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:42 2022
+
+292: tunnel closed
+298: HTTP/1.1 200 OK
+
+299: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:43 2022
+
+299: HTTP/1.1 200 OK
+
+296: tunnel closed
+295: tunnel closed
+298: tunnel closed
+300: "CONNECT sax.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:44 2022
+
+299: tunnel closed
+301: "CONNECT tvax1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:44 2022
+
+302: "CONNECT tvax4.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:44 2022
+
+303: "CONNECT www.youtube.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:44 2022
+
+301: HTTP/1.1 200 OK
+
+302: HTTP/1.1 200 OK
+
+303: HTTP/1.1 200 OK
+
+304: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:44 2022
+
+304: HTTP/1.1 200 OK
+
+301: tunnel closed
+302: tunnel closed
+303: tunnel closed
+300: HTTP/1.1 200 OK
+
+304: tunnel closed
+305: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:45 2022
+
+305: HTTP/1.1 200 OK
+
+307: "CONNECT interface.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:46 2022
+
+306: "CONNECT tva1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:46 2022
+
+306: HTTP/1.1 200 OK
+
+300: tunnel closed
+308: "CONNECT tva2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:46 2022
+
+308: HTTP/1.1 200 OK
+
+307: HTTP/1.1 200 OK
+
+309: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:47 2022
+
+305: tunnel closed
+310: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:47 2022
+
+309: HTTP/1.1 200 OK
+
+306: tunnel closed
+308: tunnel closed
+307: tunnel closed
+310: HTTP/1.1 200 OK
+
+316: "CONNECT tva2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:48 2022
+
+316: HTTP/1.1 200 OK
+
+309: tunnel closed
+311: "CONNECT d00.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:48 2022
+
+312: "CONNECT d00.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:48 2022
+
+313: "CONNECT tvax1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:48 2022
+
+315: "CONNECT tva1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:48 2022
+
+314: "CONNECT tvax4.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:48 2022
+
+313: HTTP/1.1 200 OK
+
+314: HTTP/1.1 200 OK
+
+315: HTTP/1.1 200 OK
+
+310: tunnel closed
+312: HTTP/1.1 200 OK
+
+311: HTTP/1.1 200 OK
+
+317: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:48 2022
+
+318: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:48 2022
+
+318: HTTP/1.1 200 OK
+
+319: "CONNECT i0.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:49 2022
+
+317: HTTP/1.1 200 OK
+
+319: HTTP/1.1 200 OK
+
+316: tunnel closed
+313: tunnel closed
+314: tunnel closed
+315: tunnel closed
+312: tunnel closed
+311: tunnel closed
+318: tunnel closed
+317: tunnel closed
+320: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:50 2022
+
+319: tunnel closed
+320: HTTP/1.1 200 OK
+
+321: "CONNECT i1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:51 2022
+
+321: HTTP/1.1 200 OK
+
+320: tunnel closed
+322: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:51 2022
+
+322: HTTP/1.1 200 OK
+
+321: tunnel closed
+322: tunnel closed
+323: "CONNECT cre.mix.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:53 2022
+
+323: HTTP/1.1 200 OK
+
+323: tunnel closed
+324: "CONNECT i1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:54 2022
+
+324: HTTP/1.1 200 OK
+
+324: tunnel closed
+325: "CONNECT auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:56 2022
+
+325: HTTP/1.1 200 OK
+
+329: "CONNECT d3.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:57 2022
+
+329: HTTP/1.1 200 OK
+
+326: "CONNECT d5.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:57 2022
+
+328: "CONNECT photo.auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:57 2022
+
+326: HTTP/1.1 200 OK
+
+334: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:57 2022
+
+334: HTTP/1.1 200 OK
+
+336: "CONNECT h5.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:57 2022
+
+335: "CONNECT news.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:57 2022
+
+337: "CONNECT i.sso.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:57 2022
+
+339: "CONNECT pluto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:57 2022
+
+338: "CONNECT www.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:57 2022
+
+335: HTTP/1.1 200 OK
+
+337: HTTP/1.1 200 OK
+
+338: HTTP/1.1 200 OK
+
+328: HTTP/1.1 200 OK
+
+339: HTTP/1.1 200 OK
+
+336: HTTP/1.1 200 OK
+
+325: tunnel closed
+329: tunnel closed
+326: tunnel closed
+334: tunnel closed
+335: tunnel closed
+337: tunnel closed
+338: tunnel closed
+328: tunnel closed
+339: tunnel closed
+336: tunnel closed
+340: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:59 2022
+
+341: "CONNECT d3.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:59 2022
+
+340: HTTP/1.1 200 OK
+
+341: HTTP/1.1 200 OK
+
+342: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:59 2022
+
+342: HTTP/1.1 200 OK
+
+343: "CONNECT pluto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:01:59 2022
+
+343: HTTP/1.1 200 OK
+
+344: "CONNECT h5.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:00 2022
+
+344: HTTP/1.1 200 OK
+
+340: tunnel closed
+341: tunnel closed
+342: tunnel closed
+343: tunnel closed
+344: tunnel closed
+331: "CONNECT auto5.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+330: "CONNECT auto3.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+333: "CONNECT auto2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+332: "CONNECT k.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+333: HTTP/1.1 200 OK
+
+330: HTTP/1.1 200 OK
+
+331: HTTP/1.1 200 OK
+
+332: HTTP/1.1 200 OK
+
+352: "CONNECT www.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+352: HTTP/1.1 200 OK
+
+327: "CONNECT auto.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+347: "CONNECT d7.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+327: HTTP/1.1 200 OK
+
+345: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+355: "CONNECT price.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+346: "CONNECT sbeacon.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+348: "CONNECT auto1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+348: HTTP/1.1 200 OK
+
+350: "CONNECT tva2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+347: HTTP/1.1 200 OK
+
+350: HTTP/1.1 200 OK
+
+354: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+353: "CONNECT i2.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+349: "CONNECT tvax1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:01 2022
+
+349: HTTP/1.1 200 OK
+
+354: HTTP/1.1 200 OK
+
+351: "CONNECT tva1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+351: HTTP/1.1 200 OK
+
+356: "CONNECT price.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+345: HTTP/1.1 200 OK
+
+357: "CONNECT price.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+346: HTTP/1.1 200 OK
+
+355: HTTP/1.1 200 OK
+
+359: "CONNECT price.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+358: "CONNECT price.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+353: HTTP/1.1 200 OK
+
+360: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+360: HTTP/1.1 200 OK
+
+356: HTTP/1.1 200 OK
+
+357: HTTP/1.1 200 OK
+
+359: HTTP/1.1 200 OK
+
+358: HTTP/1.1 200 OK
+
+364: "CONNECT db.auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+330: tunnel closed
+333: tunnel closed
+331: tunnel closed
+365: "CONNECT price.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+332: tunnel closed
+352: tunnel closed
+361: "CONNECT dbs.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+363: "CONNECT tvax4.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+362: "CONNECT i0.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+363: HTTP/1.1 200 OK
+
+362: HTTP/1.1 200 OK
+
+327: tunnel closed
+364: HTTP/1.1 200 OK
+
+365: HTTP/1.1 200 OK
+
+366: "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596122719 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:02 2022
+
+366: Requesting "GET http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596122719 HTTP/1.1" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596122719
+348: tunnel closed
+361: HTTP/1.1 200 OK
+
+347: tunnel closed
+350: tunnel closed
+349: tunnel closed
+354: tunnel closed
+351: tunnel closed
+345: tunnel closed
+346: tunnel closed
+355: tunnel closed
+353: tunnel closed
+360: tunnel closed
+356: tunnel closed
+357: tunnel closed
+359: tunnel closed
+358: tunnel closed
+367: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:03 2022
+
+367: HTTP/1.1 200 OK
+
+363: tunnel closed
+362: tunnel closed
+364: tunnel closed
+365: tunnel closed
+372: "CONNECT db.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:03 2022
+
+373: "CONNECT interface.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:03 2022
+
+369: "CONNECT usedcar.auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:03 2022
+
+370: "CONNECT www.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:03 2022
+
+361: tunnel closed
+370: HTTP/1.1 200 OK
+
+371: "CONNECT auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:03 2022
+
+368: "CONNECT db.auto.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:03 2022
+
+371: HTTP/1.1 200 OK
+
+374: "CONNECT a.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:04 2022
+
+375: "CONNECT i.sso.sina.com.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:04 2022
+
+376: "CONNECT a.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:04 2022
+
+375: HTTP/1.1 200 OK
+
+372: HTTP/1.1 200 OK
+
+373: HTTP/1.1 200 OK
+
+369: HTTP/1.1 200 OK
+
+368: HTTP/1.1 200 OK
+
+374: HTTP/1.1 200 OK
+
+376: HTTP/1.1 200 OK
+
+366: Received "HTTP/1.1 200 OK" from  http://adu.g-fox.cn/adu.gif?channelid=firefox.com.cn&fxversion=97.0.1&ceversion=2022.2&ver=2_2&pk=%7B5042e683-28c6-4cb8-b54a-dd8a2ec9e26e%7D&uk=%7Bd6e1513c-b3a7-48f8-8df7-339c10961a5a%7D&cehome=true&locale=zh-CN&age=5&default=false&defaultHttp=false&flash=&tracking=3&now=1645596122719
+366: Responding "HTTP/1.1 200 OK"
+367: tunnel closed
+377: "CONNECT price.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:04 2022
+
+370: tunnel closed
+371: tunnel closed
+375: tunnel closed
+377: HTTP/1.1 200 OK
+
+372: tunnel closed
+378: "CONNECT simg.s.weibo.com:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:05 2022
+
+373: tunnel closed
+369: tunnel closed
+368: tunnel closed
+374: tunnel closed
+376: tunnel closed
+379: "CONNECT googleads.g.doubleclick.net:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:05 2022
+
+379: HTTP/1.1 200 OK
+
+378: HTTP/1.1 200 OK
+
+380: "CONNECT n.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:05 2022
+
+380: HTTP/1.1 200 OK
+
+377: tunnel closed
+379: tunnel closed
+378: tunnel closed
+380: tunnel closed
+381: "CONNECT i1.sinaimg.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:08 2022
+
+381: HTTP/1.1 200 OK
+
+381: tunnel closed
+382: "CONNECT price.auto.sina.cn:443 HTTP/1.1" from 174.109.80.19 @ Wed Feb 23 06:02:09 2022
+
+382: HTTP/1.1 200 OK
+
+382: tunnel closed

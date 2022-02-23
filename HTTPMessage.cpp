@@ -16,6 +16,7 @@ HTTPMessage::HTTPMessage(const char * buffer, size_t id) : ID(id) {
   raw_stream << buffer;
   //parse start line
   std::getline(raw_stream, start_line);
+  start_line.assign(start_line.begin(), start_line.end()-1);
   //parse header line
   std::string headerLine;
   std::getline(raw_stream, headerLine);
