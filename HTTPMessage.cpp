@@ -66,7 +66,7 @@ struct addrinfo * HTTPMessage::getHost() {
   return hostinfo;
 }
 std::string HTTPMessage::getStartLine() {
-  return start_line;
+  return start_line.assign(start_line.begin(), start_line.end()-1);
 }
 std::map<std::string, std::string> HTTPMessage::getHeaders() {
   return headers;

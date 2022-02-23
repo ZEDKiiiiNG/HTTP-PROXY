@@ -1,0 +1,59 @@
+0: "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
+" from 174.109.88.69 @ Wed Feb 23 01:59:08 2022
+
+0: Requesting "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
+" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
+1: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1
+" from 174.109.88.69 @ Wed Feb 23 01:59:08 2022
+
+1: HTTP/1.1 200 OK
+
+0: Received "HTTP/1.1 200 OK
+" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
+0: Error unkown error 
+1: tunnel closed
+2: "CONNECT newtab.firefoxchina.cn:443 HTTP/1.1
+" from 174.109.88.69 @ Wed Feb 23 01:59:25 2022
+
+2: HTTP/1.1 200 OK
+
+3: "CONNECT api2.firefoxchina.cn:443 HTTP/1.1
+" from 174.109.88.69 @ Wed Feb 23 01:59:25 2022
+
+3: HTTP/1.1 200 OK
+
+2: tunnel closed
+3: tunnel closed
+0: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1
+" from 174.109.88.69 @ Wed Feb 23 02:08:16 2022
+
+0: HTTP/1.1 200 OK
+
+1: "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
+" from 174.109.88.69 @ Wed Feb 23 02:08:17 2022
+
+1: Requesting "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
+" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
+1: Received "HTTP/1.1 200 OK
+" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
+1: Error unkown error 
+0: tunnel closed
+0: "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
+" from 174.109.88.69 @ Wed Feb 23 02:09:46 2022
+
+0: Requesting "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
+" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
+0: Received "HTTP/1.1 200 OK
+" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
+0: Responding "HTTP/1.1 200 OK
+"
+0: "CONNECT contile.services.mozilla.com:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 02:19:25 2022
+
+0: HTTP/1.1 200 OK
+
+0: tunnel closed
+1: "POST http://ptsv2.com/t/ece-568/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 02:19:53 2022
+
+1: Requesting "POST http://ptsv2.com/t/ece-568/post HTTP/1." from ptsv2.com80 http://ptsv2.com/t/ece-568/post
+1: Received "HTTP/1.1 200 OK" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
+1: Responding "HTTP/1.1 200 O"

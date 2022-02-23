@@ -25,7 +25,7 @@ class HTTPResponse : public HTTPMessage{
     std::string s = start_line;
     size_t r1 = s.find(" ");
     size_t r2 = s.find(" ", s.find(" ") + 1);
-    std::string s1 = s.substr(s.find(" ")+1 , r2 - r1);
+    std::string s1 = s.substr(s.find(" ")+1 , r2 - r1-1);
     return s1;
   }
 };

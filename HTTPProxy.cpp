@@ -159,9 +159,9 @@ void HTTPProxy::processPost(HTTPRequest * request) {
       std::cout<< e.what() << std::endl;
     }
     
-    //then send back specific message according to response 
+    //then send back specific message according to response  
     std::string postStatus = response.getStatus();
-    std::cout<<"--------get response status "<< postStatus[0]  << std::endl;
+    std::cout<<"--------get response status "<< postStatus <<"." <<std::endl;
       if(postStatus == "200"){
         try{
           std::string sendToClientLog = std::to_string(request->getId()) + ": Responding \"" + response.getStartLine()  + "\"\n";
