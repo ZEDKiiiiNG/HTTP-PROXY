@@ -211,6 +211,7 @@ void HTTPProxy::processPost(HTTPRequest * request) {
 }
 void HTTPProxy::processGet(HTTPRequest * request) {
   //TODO
+  processPost(request);
 }
 
 void HTTPProxy::processRequest(HTTPRequest * request) {

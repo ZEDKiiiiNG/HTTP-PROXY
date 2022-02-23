@@ -33,7 +33,8 @@ class HTTPRequest : public HTTPMessage {
     std::string s = start_line;
     size_t r1 = s.find(" ");
     size_t r2 = s.find(" ", s.find(" ") + 1);
-    std::string s1 = host+ s.substr(s.find(" "), r2 - r1);
+    //without hostname
+    std::string s1 = s.substr(s.find(" "), r2 - r1);
     return s1;
   }
   std::string getMethod() {

@@ -40,6 +40,7 @@ HTTPMessage::HTTPMessage(std::vector<char> vectorBuf, size_t id) : ID(id) {
   raw_stream << buffer;
   //parse start line
   std::getline(raw_stream, start_line);
+  start_line.assign(start_line.begin(), start_line.end()-1);
   //parse header line
   std::string headerLine;
   std::getline(raw_stream, headerLine);
@@ -66,7 +67,10 @@ struct addrinfo * HTTPMessage::getHost() {
   return hostinfo;
 }
 std::string HTTPMessage::getStartLine() {
-  return start_line.assign(start_line.begin(), start_line.end()-1);
+  // std::string res;
+  // res.assign(start_line.begin(), start_line.end()-1);
+  // return res;
+  return start_line;
 }
 std::map<std::string, std::string> HTTPMessage::getHeaders() {
   return headers;

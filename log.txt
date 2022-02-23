@@ -1,59 +1,90 @@
-0: "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
-" from 174.109.88.69 @ Wed Feb 23 01:59:08 2022
+0: "POST http://httpbin.org/forms/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:29:59 2022
 
-0: Requesting "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
-" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
-1: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1
-" from 174.109.88.69 @ Wed Feb 23 01:59:08 2022
+0: Requesting "POST http://httpbin.org/forms/post HTTP/1.1" from httpbin.org80 http://httpbin.org/forms/post
+0: Received "HTTP/1.1 405 METHOD NOT ALLOWED" from httpbin.org80 http://httpbin.org/forms/post
+0: Error HTTP/1.1 405 METHOD NOT ALLOWED
+0: "POST http://httpbin.org/forms/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:32:57 2022
+
+0: Requesting "POST http://httpbin.org/forms/post HTTP/1.1" from  http://httpbin.org/forms/post
+0: Received "HTTP/1.1 405 METHOD NOT ALLOWED" from  http://httpbin.org/forms/post
+0: Error HTTP/1.1 405 METHOD NOT ALLOWED
+0: "GET http://httpbin.org/forms/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:35:40 2022
+
+0: Requesting "GET http://httpbin.org/forms/post HTTP/1.1" from  http://httpbin.org/forms/post
+0: Received "HTTP/1.1 200 OK" from  http://httpbin.org/forms/post
+0: Responding "HTTP/1.1 200 OK"
+1: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:35:40 2022
 
 1: HTTP/1.1 200 OK
 
-0: Received "HTTP/1.1 200 OK
-" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
-0: Error unkown error 
-1: tunnel closed
-2: "CONNECT newtab.firefoxchina.cn:443 HTTP/1.1
-" from 174.109.88.69 @ Wed Feb 23 01:59:25 2022
+2: "GET http://httpbin.org/favicon.ico HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:35:40 2022
 
+2: Requesting "GET http://httpbin.org/favicon.ico HTTP/1.1" from  http://httpbin.org/favicon.ico
+2: Received "HTTP/1.1 404 NOT FOUND" from  http://httpbin.org/favicon.ico
+2: Error HTTP/1.1 404 NOT FOUND
+1: tunnel closed
+3: "POST http://httpbin.org/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:36:06 2022
+
+3: Requesting "POST http://httpbin.org/post HTTP/1.1" from  http://httpbin.org/post
+3: Received "HTTP/1.1 200 OK" from  http://httpbin.org/post
+3: Responding "HTTP/1.1 200 OK"
+0: "CONNECT tracking.firefox.com.cn:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:42 2022
+
+1: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:42 2022
+
+1: HTTP/1.1 200 OK
+
+2: "CONNECT publish-pic-cpu.baidu.com:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:43 2022
+
+0: HTTP/1.1 200 OK
+
+3: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:43 2022
+
+3: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+4: "CONNECT newtab.firefoxchina.cn:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:43 2022
+
+1: tunnel closed
+0: tunnel closed
 2: HTTP/1.1 200 OK
 
-3: "CONNECT api2.firefoxchina.cn:443 HTTP/1.1
-" from 174.109.88.69 @ Wed Feb 23 01:59:25 2022
-
-3: HTTP/1.1 200 OK
-
 2: tunnel closed
-3: tunnel closed
-0: "CONNECT mozilla.cloudflare-dns.com:443 HTTP/1.1
-" from 174.109.88.69 @ Wed Feb 23 02:08:16 2022
+4: HTTP/1.1 200 OK
 
-0: HTTP/1.1 200 OK
+4: tunnel closed
+3: Received "HTTP/1.1 200 OK" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+3: Responding "HTTP/1.1 200 OK"
+5: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:47 2022
 
-1: "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
-" from 174.109.88.69 @ Wed Feb 23 02:08:17 2022
+5: HTTP/1.1 200 OK
 
-1: Requesting "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
-" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
-1: Received "HTTP/1.1 200 OK
-" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
-1: Error unkown error 
-0: tunnel closed
-0: "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
-" from 174.109.88.69 @ Wed Feb 23 02:09:46 2022
+6: "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:48 2022
 
-0: Requesting "POST http://ptsv2.com/t/ece-568/post HTTP/1.1
-" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
-0: Received "HTTP/1.1 200 OK
-" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
-0: Responding "HTTP/1.1 200 OK
-"
-0: "CONNECT contile.services.mozilla.com:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 02:19:25 2022
+6: Requesting "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from  http://www.httpwatch.com/favicon.ico
+6: Received "HTTP/1.1 200 OK" from  http://www.httpwatch.com/favicon.ico
+6: Responding "HTTP/1.1 200 OK"
+5: tunnel closed
+7: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:39:59 2022
 
-0: HTTP/1.1 200 OK
+7: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+7: Received "HTTP/1.1 200 OK" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+7: Responding "HTTP/1.1 200 OK"
+8: "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:40:04 2022
 
-0: tunnel closed
-1: "POST http://ptsv2.com/t/ece-568/post HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 02:19:53 2022
+8: Requesting "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from  http://www.httpwatch.com/favicon.ico
+8: Received "HTTP/1.1 206 Partial Content" from  http://www.httpwatch.com/favicon.ico
+8: Error unkown error 
+9: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:40:07 2022
 
-1: Requesting "POST http://ptsv2.com/t/ece-568/post HTTP/1." from ptsv2.com80 http://ptsv2.com/t/ece-568/post
-1: Received "HTTP/1.1 200 OK" from ptsv2.com80 http://ptsv2.com/t/ece-568/post
-1: Responding "HTTP/1.1 200 O"
+9: HTTP/1.1 200 OK
+
+9: tunnel closed
+10: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:40:43 2022
+
+10: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+10: Received "HTTP/1.1 200 OK" from  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+10: Responding "HTTP/1.1 200 OK"
+11: "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from 174.109.88.69 @ Wed Feb 23 03:40:48 2022
+
+11: Requesting "GET http://www.httpwatch.com/favicon.ico HTTP/1.1" from  http://www.httpwatch.com/favicon.ico
+11: Received "HTTP/1.1 206 Partial Content" from  http://www.httpwatch.com/favicon.ico
+11: Error unkown error 
