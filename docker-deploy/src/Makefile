@@ -5,4 +5,4 @@ proxy: proxy.cpp HTTPProxy.o HTTPMessage.o HTTPCache.o  ProxyServer.o LogWritter
 	g++ $(CPPFLAGS) -c $<
 .PHONY: clean
 clean:
-	rm -f *.o *.c~ *.h~ *.cpp~ *.hpp~ proxy
+	rm -f *.o *.c~ *.h~ *.cpp~ *.hpp~ proxy proxy.log
