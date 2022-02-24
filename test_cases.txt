@@ -1,0 +1,17 @@
+During the whole testing process, we use the firefox explorer to set our virtual machine as the proxy. We use the test tools like Restclient and use the web browsers.
+Sometimes the web browsers send unrelated requests in the background and cache web pages locally which might be troublesome.
+
+Moreover, it might take a little while to access a web page via proxy, if the locker web browsers doesnt send the request, a simple refresh can works.
+
+Here we gives the list of the websites we tested on:
+
+GET (CONNECT) https://www.youtube.com
+
+GET (CONNECT) https://www.wikipedia.org/
+
+POST http://ptsv2.com/t/ece-568/post
+
+GET then POST http://httpbin.org/forms/post
+
+GET  http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+(chunked image data, both http and https work fine)
