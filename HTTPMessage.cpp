@@ -9,72 +9,62 @@
 #include <sstream>
 HTTPMessage::HTTPMessage() {
 }
-HTTPMessage::HTTPMessage(const char * buffer, size_t id) : ID(id) {
-  //cast char * into stringStream for further parsing
-
-  std::stringstream raw_stream;
-  raw_stream << buffer;
-  //parse start line
-  std::getline(raw_stream, start_line);
-  start_line.assign(start_line.begin(), start_line.end()-1);
-  //parse header line
-  std::string headerLine;
-  std::getline(raw_stream, headerLine);
-  while (headerLine != "\r") {
-    headers.insert(splitHeaderLine(headerLine.substr(0, headerLine.find("\r"))));
-    std::getline(raw_stream, headerLine);
-  }
-  //parse payload
-  char c;
-  while (raw_stream.get(c)) {
-    message_body.push_back(c);
-  }
-  // message_body.push_back('\0');
-}
 HTTPMessage::HTTPMessage(std::vector<char> vectorBuf, size_t id) : ID(id) {
   char * buffer = new char[vectorBuf.size()];
   for (size_t i = 0; i < vectorBuf.size(); i++) {
     buffer[i] = vectorBuf[i];
   }
   //TODO: call another constructer
+  size_t location = 0;
   std::stringstream raw_stream;
   raw_stream << buffer;
   //parse start line
   std::getline(raw_stream, start_line);
-  start_line.assign(start_line.begin(), start_line.end()-1);
+  location += start_line.size();
+  location += 1;
   //parse header line
   std::string headerLine;
   std::getline(raw_stream, headerLine);
+  std::pair<std::string, std::string> headerPair;
   while (headerLine != "\r") {
-    headers.insert(splitHeaderLine(headerLine.substr(0, headerLine.find("\r"))));
+    headerLine = headerLine.substr(0, headerLine.find("\r"));
+    headerPair = splitHeaderLine(headerLine);
+    headers.push_back(headerPair);
+    location += headerLine.size();
+    location += 2;
     std::getline(raw_stream, headerLine);
   }
+  location += 2;
   //parse payload
-  char c;
-  while (raw_stream.get(c)) {
-    message_body.push_back(c);
+  std::cout << location << "  " << vectorBuf.size() << std::endl;
+  for (size_t i = location; i < vectorBuf.size(); i++) {
+    message_body.push_back(vectorBuf[i]);
   }
-  // message_body.push_back('\0');
+  delete[] buffer;
 }
 struct addrinfo * HTTPMessage::getHost() {
   struct addrinfo hints, *hostinfo;
   memset(&hints, 0, sizeof(hints));
   hints.ai_family = AF_UNSPEC;
   hints.ai_socktype = SOCK_STREAM;
-  std::pair<std::string, std::string> host = splitHost(headers["Host"]);
+  std::pair<std::string, std::string> host = splitHost(getHeaders()["Host"]);
   //std::cout << host.first << ": " << host.second << std::endl;
   //TBD:Error check
   getaddrinfo(host.first.c_str(), host.second.c_str(), &hints, &hostinfo);
   return hostinfo;
 }
 std::string HTTPMessage::getStartLine() {
-  // std::string res;
-  // res.assign(start_line.begin(), start_line.end()-1);
-  // return res;
   return start_line;
 }
 std::map<std::string, std::string> HTTPMessage::getHeaders() {
-  return headers;
+  std::map<std::string, std::string> headerMap;
+  for (size_t i = 0; i < headers.size(); i++) {
+    headerMap.insert(headers[i]);
+  }
+  return headerMap;
+}
+void HTTPMessage::addHeader(std::pair<std::string, std::string> toAdd) {
+  headers.push_back(toAdd);
 }
 std::vector<char> HTTPMessage::getPayload() {
   return message_body;
@@ -125,7 +115,8 @@ std::vector<char> HTTPMessage::to_string() {
   std::vector<char> result;
   vectorScp(result, start_line);
   result.push_back('\n');
-  for (std::map<std::string, std::string>::const_iterator it = headers.begin();
+  for (std::vector<std::pair<std::string, std::string> >::const_iterator it =
+           headers.begin();
        it != headers.end();
        ++it) {
     vectorScp(result, it->first);
@@ -140,7 +131,7 @@ std::vector<char> HTTPMessage::to_string() {
 // directly get host name and port
 // TODO HttpMessage format check !!!!!!!!!!!!!!
 std::pair<std::string, std::string> HTTPMessage::getHostnameAndPort() {
-  std::string host = headers["Host"];
+  std::string host = getHeaders()["Host"];
   std::string hostName, hostPort;
   size_t colonPos = host.find(':');
   if (colonPos != std::string::npos) {

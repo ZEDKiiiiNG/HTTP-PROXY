@@ -9,7 +9,7 @@
 class HTTPMessage {
  protected:
   std::string start_line;
-  std::map<std::string, std::string> headers;
+  std::vector<std::pair<std::string, std::string> > headers;
   std::vector<char> message_body;
   size_t ID;
 
@@ -20,6 +20,7 @@ class HTTPMessage {
   // std::string getId();
   std::string getStartLine();
   std::map<std::string, std::string> getHeaders();
+  void addHeader(std::pair<std::string, std::string>);
   std::vector<char> getPayload();
   struct addrinfo * getHost();
   size_t getId() { return ID; }

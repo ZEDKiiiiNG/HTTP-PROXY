@@ -17,50 +17,46 @@ ProxyServer::ProxyServer(std::string port_number) : port_number(port_number) {
   int status;
   struct addrinfo hints;
   memset(&hints, 0, sizeof(struct addrinfo));
-  hints.ai_family = AF_UNSPEC;  //Allow both IPv4 IPv6
-  hints.ai_socktype = SOCK_STREAM;  //当protocol为0时，会自动选择type类型对应的默认协议。
-  hints.ai_flags = AI_PASSIVE;  //For wildcard IP address
-  hints.ai_protocol = 0;        //FOr any protocal
+  hints.ai_family = AF_UNSPEC;
+  hints.ai_socktype = SOCK_STREAM;
+  hints.ai_flags = AI_PASSIVE;
+  hints.ai_protocol = 0;
   int yes = 1;
-  std::cout<< "build ProxyServer start"<<std::endl;
+  std::cout << "build ProxyServer start" << std::endl;
   // convert hints into servinfo
   if ((status = getaddrinfo(NULL, port_number.c_str(), &hints, &servinfo)) != 0) {
-    // perror("getaddrinfo failed");
     fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(status));
     perror("Proxy: getaddrinfo");
   }
-  // std::cout<< "get  getaddrinfo complete"<<std::endl;
-  //TODO: 循环结构？
   // create socket file descriptor
   if ((sockfd = socket(
            servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol)) == -1) {
     perror("server: socket");
   }
-  // std::cout<< "get  socket complete"<<std::endl;
   // keep using the port
   if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1) {
     perror("setsockopt failed");
   }
-  // std::cout<< "get  setsockopt complete"<<std::endl;
   // bind the socket file descriptor
   if (bind(sockfd, servinfo->ai_addr, servinfo->ai_addrlen) == -1) {
     perror("bind failed");
   }
-  // std::cout<< "get  bind complete"<<std::endl;
   // listening
   if (listen(sockfd, 100) == -1) {
     perror("listen failed");
   }
-  std::cout<< "get  listen complete"<<std::endl;
+  std::cout << "get listen complete" << std::endl;
 }
 int ProxyServer::acceptConnection(std::string & client_ip) {
   char ip[INET6_ADDRSTRLEN];
   struct sockaddr_storage client_addr;
   socklen_t sin_size = sizeof(client_addr);
+  std::cout << "acceptConnection waiting for connections" << std::endl;
   int clientfd = accept(sockfd, (struct sockaddr *)&client_addr, &sin_size);
   if (clientfd == -1) {
     perror("accept failed");
   }
+  std::cout << "acceptConnection accpet Connection with " << clientfd << std::endl;
   // struct sockaddr_in * c_addr = (struct sockaddr_in *) &client_addr;
   // char * ip_addr = inet_ntoa(c_addr->sin_addr);
   inet_ntop(client_addr.ss_family,
@@ -71,72 +67,40 @@ int ProxyServer::acceptConnection(std::string & client_ip) {
   return clientfd;
 }
 std::vector<char> ProxyServer::recvMessage(int recvSock, bool loop) {
-  // char buf[MAXDATASIZE];
-  // std::string allBuf;
-  // while(true){
-  //   int numbytes = recv(recvSock, buf, MAXDATASIZE - 1, 0);
-  //   if ( numbytes== -1) {
-  //     throw myException("recv messsage length error!");
-  //   }
-  //   if (allBuf.length() !=0 && numbytes ==0){
-  //     break;
-  //   }
-  //   allBuf.append(buf, numbytes);
-  //   if ( !loop ){
-  //     if(allBuf.length() == 0){
-  //       throw myException("recvMessage error: the total length is 0");
-  //     }
-  //     break;
-  //   }
-  // }
-  // // buf[numbytes] = '\0';
-  // allBuf.append("\0");
-  // std::cout << "Proxy server: recieved HTTP message:"<< allBuf << "with loop "<< loop << std::endl;
-  // std::cout << "Recv Sucess !!!!!"<< std::endl;
-  // // TODO: 下下策
-  // const char* res = allBuf.c_str();
-  // std::vector<char> vectorBuf(res, res + strlen(res));
-  // return vectorBuf;
-  // vector buffer 
-  std::vector<char>  message;
+  std::vector<char> message;
   message.resize(MAXDATASIZE);
   size_t totalSize = 0;
-  while(true){
+  while (true) {
+    std::cout << "RecvMessage waiting for recv..." << std::endl;
     int numbytes = recv(recvSock, &message.data()[totalSize], MAXDATASIZE - 1, 0);
-    if ( numbytes== -1) {
+    if (numbytes == -1) {
       throw myException("recv messsage length error!");
     }
     totalSize = totalSize + numbytes;
-    if (totalSize !=0 && numbytes ==0){
+    if (totalSize != 0 && numbytes == 0) {
       break;
     }
-    if ( !loop ){
-      if(totalSize == 0){
+    if (!loop) {
+      if (totalSize == 0) {
         throw myException("recvMessage error: the total length is 0");
       }
       break;
     }
   }
-  // message.data()[totalSize] = '\0';
   message.resize(totalSize);
   return message;
-  
 }
 HTTPRequest * ProxyServer::recvRequest(int recvSock,
                                        std::string clientIp,
                                        size_t requestId) {
   std::vector<char> vectorBuf = recvMessage(recvSock, false);
-
-  // HTTPMessage msg(buf);
-  //get the recv time
-  // 基于当前系统的当前日期/时间
   time_t now = time(0);
-  // 把 now 转换为 tm 结构
   tm * gmtm = gmtime(&now);
   char * dt = asctime(gmtm);
+  dt[strlen(dt) - 1] = 0;
   std::string recv_time = std::string(dt);
-  std::cout << "Request details: ID:"<< requestId<<" clientIp "<<clientIp << "recv time"<< recv_time<< std::endl;
-  HTTPRequest * result = new HTTPRequest(vectorBuf, requestId, clientIp, recv_time,recvSock);
+  HTTPRequest * result =
+      new HTTPRequest(vectorBuf, requestId, clientIp, recv_time, recvSock);
   return result;
 }
 
@@ -147,8 +111,8 @@ int ProxyServer::connectServer(std::pair<std::string, std::string> host) {
   memset(&hints, 0, sizeof(hints));
   hints.ai_family = AF_UNSPEC;
   hints.ai_socktype = SOCK_STREAM;
-  hints.ai_flags = AI_CANONNAME;  //AI_PASSIVE 被动的，用于bind，通常用于server socket
-  std::cout<< "connectServer start: "<< std::endl;
+  hints.ai_flags = AI_CANONNAME;
+  std::cout << "connectServer start: " << std::endl;
   if ((status = getaddrinfo(
            host.first.c_str(), host.second.c_str(), &hints, &servinfo)) != 0) {
     //TODO: failed to connect to server, send 404 to client
@@ -180,26 +144,34 @@ int ProxyServer::connectServer(std::pair<std::string, std::string> host) {
     // cannnot connect successfully
     throw myException("connectServer: failed to connect");
   }
-  std::cout<< "connectServer end with serverFd: "<< serverFd << std::endl;
+  std::cout << "connectServer end with serverFd: " << serverFd << std::endl;
   return serverFd;
 }
 
-HTTPResponse ProxyServer::recvResponse(int recvSock, std::string url, size_t requestId){
+HTTPResponse ProxyServer::recvResponse(int recvSock, std::string url, size_t requestId) {
   std::vector<char> vectorBuf = recvMessage(recvSock, true);
-  
+
   HTTPResponse result(vectorBuf, requestId, url);
   return result;
 }
-void ProxyServer::sendResponse(int recvSock, HTTPResponse response){
-  std::vector<char> vChar= response.to_string();
-    //  char *buf = new char[vChar.size()+1];
-    //TODO: check method or: char * buf = vChar.empty() ? 0 : & vChar[0];
-	  // copy(vChar.begin(),vChar.end(), buf);
-    if(send(recvSock, vChar.data(), vChar.size() + 1, 0) == -1){
-      // delete[] buf;
-      close(recvSock);
-      throw myException("send request to server failed");
-    }
-    // delete[] buf;
-    std::cout<<"--------send response complete" << std::endl;
+
+HTTPResponse ProxyServer::recvChunk(int recvSock, std::string url, size_t requestId) {
+  std::vector<char> vectorBuf = recvMessage(recvSock, false);
+
+  HTTPResponse result(vectorBuf, requestId, url);
+  return result;
+}
+void ProxyServer::sendResponse(int recvSock, HTTPResponse response) {
+  std::vector<char> vChar = response.to_string();
+  if (send(recvSock, vChar.data(), vChar.size(), 0) == -1) {
+    close(recvSock);
+    throw myException("send request to server failed");
+  }
+}
+void ProxyServer::sendMessage(int sendSock, HTTPMessage msg) {
+  std::vector<char> vChar = msg.to_string();
+  if (send(sendSock, vChar.data(), vChar.size(), 0) == -1) {
+    close(sendSock);
+    throw myException("failed to send message");
+  }
 }

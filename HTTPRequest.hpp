@@ -12,20 +12,16 @@ class HTTPRequest : public HTTPMessage {
   int clientFd;
 
  public:
-  HTTPRequest(const char * buffer,
-              size_t id,
-              std::string client_ip,
-              std::string recv_time,
-              int clientFd) :
-      HTTPMessage(buffer, id), client_ip(client_ip), recv_time(recv_time), clientFd(clientFd) {}
   HTTPRequest(std::vector<char> buffer,
               size_t id,
               std::string client_ip,
               std::string recv_time,
               int clientFd) :
-      HTTPMessage(buffer, id), client_ip(client_ip), recv_time(recv_time), clientFd(clientFd) {}
+      HTTPMessage(buffer, id),
+      client_ip(client_ip),
+      recv_time(recv_time),
+      clientFd(clientFd) {}
   std::string getClientIp() { return client_ip; }
-  //std::string log(std::ostream output) { output << getID() << ":" << }
   std::string getRecvTime() { return recv_time; }
   std::string getUrl() {
     std::pair<std::string, std::string> hostpair = getHostnameAndPort();

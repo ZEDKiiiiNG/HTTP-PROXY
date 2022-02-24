@@ -3,22 +3,25 @@
 #include <mutex>
 #include <thread>
 
+#include "HTTPCache.hpp"
 #include "HTTPRequest.hpp"
 #include "LogWritter.hpp"
 #include "ProxyServer.hpp"
 #include "common_headers.h"
 #include "my_exception.h"
 class HTTPProxy {
+ private:
+  HTTPCache cache;
+
  public:
-  //TODO: Log,Cache
   ProxyServer pserver;
   //size_t id
   size_t requestId;
   logWritter logger;
   std::mutex writeLock;
 
-  HTTPProxy() : pserver("3490") { requestId = 0; }
-  HTTPProxy(std::string port) : pserver(port) { requestId = 0; }
+  HTTPProxy() : cache(50), pserver("3490") { requestId = 0; }
+  HTTPProxy(std::string port) : cache(50), pserver(port) { requestId = 0; }
   ~HTTPProxy() {}
 
   void serveConnection(int clientSock, std::string clientIp);
@@ -30,6 +33,11 @@ class HTTPProxy {
   void processConnect(HTTPRequest * request);
   void processPost(HTTPRequest * request);
   void processGet(HTTPRequest * request);
-  
+
+  bool validate(HTTPResponse response, HTTPRequest, int serverFd);
+  bool checkTime(HTTPResponse res);
+  HTTPResponse askServer(HTTPRequest request);
+  void fwdChunks(int serverFd, int clientFd);
+  std::time_t timeTransfer(std::string time);
 };
 #endif
